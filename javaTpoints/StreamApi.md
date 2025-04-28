@@ -657,3 +657,621 @@ Too small dataset! Parallel overhead exceeds benefits.
 **Answer:**  
 **Readability over cleverness!**  
 Streams should make code more understandable, not less. If a stream pipeline becomes too complex, consider using traditional loops.
+
+---
+
+# Most Frequently Asked Coding Questions Using Java Stream API
+
+Here are some of the most commonly asked coding questions in interviews, solved using Java Stream API:
+
+## 1. Find the sum of all elements in a list
+
+```java
+List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
+int sum = numbers.stream().mapToInt(Integer::intValue).sum();
+System.out.println("Sum: " + sum);
+```
+
+## 2. Find the maximum element in a list
+
+```java
+List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
+Optional<Integer> max = numbers.stream().max(Integer::compare);
+max.ifPresent(value -> System.out.println("Max: " + value));
+```
+
+## 3. Filter even numbers from a list
+
+```java
+List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8);
+List<Integer> evenNumbers = numbers.stream()
+                                  .filter(n -> n % 2 == 0)
+                                  .collect(Collectors.toList());
+System.out.println("Even numbers: " + evenNumbers);
+```
+
+## 4. Convert list of strings to uppercase
+
+```java
+List<String> names = Arrays.asList("alice", "bob", "charlie");
+List<String> upperCaseNames = names.stream()
+                                  .map(String::toUpperCase)
+                                  .collect(Collectors.toList());
+System.out.println("Uppercase names: " + upperCaseNames);
+```
+
+## 5. Count occurrences of each character in a string
+
+```java
+String input = "programming";
+Map<Character, Long> charCount = input.chars()
+                                     .mapToObj(c -> (char) c)
+                                     .collect(Collectors.groupingBy(
+                                         Function.identity(), 
+                                         Collectors.counting()
+                                     ));
+System.out.println("Character counts: " + charCount);
+```
+
+## 6. Find the first non-repeated character in a string
+
+```java
+String input = "aabbcdde";
+Optional<Character> firstNonRepeated = input.chars()
+    .mapToObj(c -> (char) c)
+    .collect(Collectors.groupingBy(
+        Function.identity(), 
+        LinkedHashMap::new, 
+        Collectors.counting()
+    ))
+    .entrySet()
+    .stream()
+    .filter(entry -> entry.getValue() == 1)
+    .map(Map.Entry::getKey)
+    .findFirst();
+firstNonRepeated.ifPresent(c -> System.out.println("First non-repeated: " + c));
+```
+
+## 7. Find duplicate elements in a list
+
+```java
+List<Integer> numbers = Arrays.asList(1, 2, 3, 2, 4, 5, 4);
+Set<Integer> duplicates = numbers.stream()
+    .filter(n -> Collections.frequency(numbers, n) > 1)
+    .collect(Collectors.toSet());
+System.out.println("Duplicates: " + duplicates);
+```
+
+## 8. Sort a list of strings ignoring case
+
+```java
+List<String> names = Arrays.asList("Alice", "bob", "Charlie", "dave");
+List<String> sortedNames = names.stream()
+                               .sorted(String.CASE_INSENSITIVE_ORDER)
+                               .collect(Collectors.toList());
+System.out.println("Sorted names: " + sortedNames);
+```
+
+## 9. Check if all elements satisfy a condition
+
+```java
+List<Integer> numbers = Arrays.asList(2, 4, 6, 8, 10);
+boolean allEven = numbers.stream().allMatch(n -> n % 2 == 0);
+System.out.println("All even? " + allEven);
+```
+
+## 10. Find the average of a list of numbers
+
+```java
+List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
+OptionalDouble average = numbers.stream().mapToInt(Integer::intValue).average();
+average.ifPresent(avg -> System.out.println("Average: " + avg));
+```
+
+## 11. Concatenate list of strings with a delimiter
+
+```java
+List<String> words = Arrays.asList("Hello", "world", "Java", "Streams");
+String concatenated = words.stream().collect(Collectors.joining(", "));
+System.out.println("Concatenated: " + concatenated);
+```
+
+## 12. Find the longest string in a list
+
+```java
+List<String> words = Arrays.asList("Java", "Python", "JavaScript", "C++");
+Optional<String> longest = words.stream()
+                               .max(Comparator.comparingInt(String::length));
+longest.ifPresent(word -> System.out.println("Longest word: " + word));
+```
+
+---
+
+# Java Stream API Coding Questions by Difficulty Level
+
+Here's a categorized list of coding questions using Java Stream API, grouped by difficulty from beginner to expert level.
+
+## Beginner Level (Basic Stream Operations)
+
+### 1. Sum of squares
+```java
+List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
+int sumOfSquares = numbers.stream()
+                         .mapToInt(n -> n * n)
+                         .sum();
+```
+
+### 2. Filter names starting with 'A'
+```java
+List<String> names = Arrays.asList("Alice", "Bob", "Anna", "Alex", "John");
+List<String> aNames = names.stream()
+                          .filter(name -> name.startsWith("A"))
+                          .collect(Collectors.toList());
+```
+
+### 3. Convert list of integers to their string representation
+```java
+List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
+List<String> numberStrings = numbers.stream()
+                                   .map(String::valueOf)
+                                   .collect(Collectors.toList());
+```
+
+### 4. Check if list contains any negative numbers
+```java
+List<Integer> numbers = Arrays.asList(1, 2, -3, 4, 5);
+boolean hasNegative = numbers.stream().anyMatch(n -> n < 0);
+```
+
+## Intermediate Level (More Complex Operations)
+
+### 1. Find second largest number
+```java
+List<Integer> numbers = Arrays.asList(5, 2, 8, 1, 9, 3);
+Optional<Integer> secondLargest = numbers.stream()
+                                       .sorted(Comparator.reverseOrder())
+                                       .skip(1)
+                                       .findFirst();
+```
+
+### 2. Group employees by department
+```java
+class Employee {
+    String name;
+    String department;
+    // constructor, getters
+}
+
+List<Employee> employees = // ... initialized list
+Map<String, List<Employee>> byDepartment = employees.stream()
+    .collect(Collectors.groupingBy(Employee::getDepartment));
+```
+
+### 3. Find the most frequent element in a list
+```java
+List<String> items = Arrays.asList("apple", "banana", "apple", "orange", "banana", "apple");
+Map<String, Long> counts = items.stream()
+    .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+
+Optional<String> mostFrequent = counts.entrySet().stream()
+    .max(Map.Entry.comparingByValue())
+    .map(Map.Entry::getKey);
+```
+
+### 4. Merge two lists alternately
+```java
+List<String> list1 = Arrays.asList("A", "B", "C");
+List<String> list2 = Arrays.asList("X", "Y", "Z");
+
+List<String> merged = IntStream.range(0, Math.max(list1.size(), list2.size()))
+    .boxed()
+    .flatMap(i -> {
+        Stream<String> s1 = i < list1.size() ? Stream.of(list1.get(i)) : Stream.empty();
+        Stream<String> s2 = i < list2.size() ? Stream.of(list2.get(i)) : Stream.empty();
+        return Stream.concat(s1, s2);
+    })
+    .collect(Collectors.toList());
+```
+
+## Advanced Level (Complex Data Processing)
+
+### 1. Find the longest palindrome in a list
+```java
+List<String> words = Arrays.asList("madam", "racecar", "apple", "banana", "rotor");
+Optional<String> longestPalindrome = words.stream()
+    .filter(word -> word.equals(new StringBuilder(word).reverse().toString()))
+    .max(Comparator.comparingInt(String::length));
+```
+
+### 2. Matrix transpose using streams
+```java
+List<List<Integer>> matrix = Arrays.asList(
+    Arrays.asList(1, 2, 3),
+    Arrays.asList(4, 5, 6),
+    Arrays.asList(7, 8, 9)
+);
+
+List<List<Integer>> transposed = IntStream.range(0, matrix.get(0).size())
+    .mapToObj(i -> matrix.stream()
+                        .map(row -> row.get(i))
+                        .collect(Collectors.toList()))
+    .collect(Collectors.toList());
+```
+
+### 3. Partition numbers into primes and non-primes
+```java
+Map<Boolean, List<Integer>> primePartition = IntStream.rangeClosed(2, 100)
+    .boxed()
+    .collect(Collectors.partitioningBy(n -> 
+        IntStream.rangeClosed(2, (int) Math.sqrt(n))
+                .noneMatch(i -> n % i == 0)));
+```
+
+### 4. Find all pairs that sum to a target value
+```java
+List<Integer> numbers = Arrays.asList(2, 4, 3, 5, 6, -2, 4, 7, 8, 9);
+int target = 7;
+
+List<int[]> pairs = IntStream.range(0, numbers.size())
+    .boxed()
+    .flatMap(i -> IntStream.range(i + 1, numbers.size())
+                          .filter(j -> numbers.get(i) + numbers.get(j) == target)
+                          .mapToObj(j -> new int[]{numbers.get(i), numbers.get(j)}))
+    .collect(Collectors.toList());
+```
+
+## Expert Level (Parallel Streams and Performance)
+
+### 1. Parallel prime number check
+```java
+boolean isPrimeParallel(int number) {
+    return number > 1 && 
+           IntStream.rangeClosed(2, (int) Math.sqrt(number))
+                   .parallel()
+                   .noneMatch(i -> number % i == 0);
+}
+```
+
+### 2. Word frequency count from large text file
+```java
+Map<String, Long> wordCount = Files.lines(Paths.get("large_text.txt"))
+    .parallel()
+    .flatMap(line -> Arrays.stream(line.split("\\s+")))
+    .filter(word -> word.length() > 0)
+    .collect(Collectors.groupingByConcurrent(
+        String::toLowerCase,
+        Collectors.counting()
+    ));
+```
+
+### 3. Custom collector to calculate statistical summary
+```java
+class DoubleSummaryStatistics implements Collector<Double, double[], DoubleSummary> {
+    // Implementation of supplier, accumulator, combiner, finisher
+    // and characteristics methods
+}
+
+List<Double> data = // large dataset
+DoubleSummary stats = data.parallelStream()
+                         .collect(new DoubleSummaryStatistics());
+```
+
+### 4. Stream fusion optimization example
+```java
+List<String> result = largeDataset.stream()
+    .filter(s -> s.length() > 3)       // Intermediate operation 1
+    .map(String::toUpperCase)          // Intermediate operation 2
+    .filter(s -> s.contains("A"))      // Intermediate operation 3
+    .sorted()                          // Stateful intermediate operation
+    .limit(100)                        // Short-circuiting operation
+    .collect(Collectors.toList());     // Terminal operation
+```
+
+---
+
+# Tricky Java Stream API Questions
+
+Here are some challenging and tricky questions that test deep understanding of Java Stream API:
+
+## 1. Infinite Stream Generation
+```java
+// Generate infinite stream of random numbers between 1-100
+// and find first number divisible by both 7 and 9
+OptionalInt firstDivisible = IntStream.generate(() -> new Random().nextInt(100) + 1)
+                                    .filter(n -> n % 7 == 0 && n % 9 == 0)
+                                    .findFirst();
+```
+
+## 2. Custom Collector for Running Average
+```java
+// Collector that calculates running average without storing all elements
+Collector<Integer, int[], Double> runningAverage = Collector.of(
+    () -> new int[2], // [0] = count, [1] = sum
+    (acc, value) -> { acc[0]++; acc[1] += value; },
+    (acc1, acc2) -> { acc1[0] += acc2[0]; acc1[1] += acc2[1]; return acc1; },
+    acc -> acc[0] == 0 ? 0.0 : (double) acc[1] / acc[0]
+);
+
+double avg = Stream.of(1, 2, 3, 4, 5).collect(runningAverage);
+```
+
+## 3. Stream Peek Pitfall
+```java
+// What's wrong with this code?
+List<String> list = Stream.of("one", "two", "three")
+                         .filter(s -> s.length() > 3)
+                         .peek(System.out::println)
+                         .map(String::toUpperCase)
+                         .collect(Collectors.toList());
+// Hint: peek is meant for debugging, not for side effects
+```
+
+## 4. Stateful Predicate Challenge
+```java
+// Create a predicate that returns true every nth time it's called
+class EveryNth<T> implements Predicate<T> {
+    private int counter = 0;
+    private final int n;
+    
+    public EveryNth(int n) { this.n = n; }
+    
+    @Override
+    public boolean test(T t) {
+        return ++counter % n == 0;
+    }
+}
+
+// Usage:
+List<Integer> filtered = IntStream.range(1, 100)
+                                .boxed()
+                                .filter(new EveryNth<>(7))
+                                .collect(Collectors.toList());
+```
+
+## 5. Stream Concatenation Gotcha
+```java
+// What's the output of this code?
+Stream<String> s1 = Stream.of("A", "B", "C");
+Stream<String> s2 = Stream.of("X", "Y", "Z");
+Stream<String> combined = Stream.concat(s1, s2);
+
+s1.forEach(System.out::print); // What happens here?
+// Answer: throws IllegalStateException - streams can't be reused
+```
+
+## 6. Lazy Evaluation Puzzle
+```java
+// Why does this print nothing?
+Stream.generate(() -> {
+    System.out.println("Generating...");
+    return 1;
+}).limit(10);
+// Answer: Missing terminal operation - streams are lazy
+```
+
+## 7. Custom Spliterator Challenge
+```java
+// Implement a spliterator that reads lines from a file in reverse order
+class ReverseLineSpliterator implements Spliterator<String> {
+    private final BufferedReader reader;
+    private Deque<String> lines = new ArrayDeque<>();
+    
+    // Implementation of tryAdvance, trySplit, estimateSize, characteristics
+    // ...
+}
+
+// Usage:
+Spliterator<String> spliterator = new ReverseLineSpliterator(new File("file.txt"));
+Stream<String> reverseStream = StreamSupport.stream(spliterator, true);
+```
+
+## 8. Parallel Stream Deadlock
+```java
+// Can you spot the potential deadlock in this parallel stream?
+List<Integer> numbers = IntStream.range(0, 1000).boxed().collect(Collectors.toList());
+Map<Integer, Long> countMap = numbers.parallelStream()
+    .collect(Collectors.groupingBy(
+        n -> n % 10,
+        Collectors.counting()
+    ));
+// Hint: The issue is with the shared result container in parallel processing
+```
+
+## 9. Stream Short-Circuiting Riddle
+```java
+// What does this code output and why?
+OptionalInt first = IntStream.range(1, 1000)
+                           .filter(n -> {
+                               System.out.println("Testing " + n);
+                               return n % 7 == 0 && n % 9 == 0;
+                           })
+                           .findAny();
+
+System.out.println("Found: " + first.orElse(-1));
+// Answer: Behavior differs between sequential and parallel streams
+```
+
+## 10. Collector Characteristics Mystery
+```java
+// Why does this custom collector fail in parallel?
+Collector<String, StringBuilder, String> badCollector = Collector.of(
+    StringBuilder::new,
+    StringBuilder::append,
+    (sb1, sb2) -> sb1.append(sb2), // Problem is here
+    StringBuilder::toString,
+    Characteristics.CONCURRENT // This is wrong for this collector
+);
+
+String result = Stream.of("a", "b", "c").parallel().collect(badCollector);
+// Answer: StringBuilder is not thread-safe
+```
+---
+
+# Advanced Java Stream API Challenges
+
+Here are more complex and tricky Java Stream API questions that test deep understanding and creative problem-solving skills:
+
+## 1. Fibonacci Sequence Generator
+```java
+// Generate infinite Fibonacci sequence using Stream.iterate
+Stream.iterate(new long[]{0, 1}, pair -> new long[]{pair[1], pair[0] + pair[1]})
+      .map(pair -> pair[0])
+      .limit(20)
+      .forEach(System.out::println);
+```
+
+## 2. Prime Number Sieve
+```java
+// Sieve of Eratosthenes using Streams
+IntStream.rangeClosed(2, 100)
+         .filter(n -> IntStream.rangeClosed(2, (int)Math.sqrt(n))
+                              .noneMatch(i -> n%i == 0))
+         .forEach(System.out::println);
+```
+
+## 3. Nested Collection Flattening
+```java
+// Flatten a list of lists with duplicates and maintain order
+List<List<Integer>> nested = Arrays.asList(
+    Arrays.asList(1, 2, 3),
+    Arrays.asList(3, 4, 5),
+    Arrays.asList(5, 6, 7)
+);
+
+List<Integer> flattened = nested.stream()
+                               .flatMap(List::stream)
+                               .distinct()
+                               .collect(Collectors.toList());
+```
+
+## 4. Balanced Parentheses Checker
+```java
+// Validate balanced parentheses using stream reduction
+String input = "((()))()()";
+boolean isBalanced = input.chars()
+    .mapToObj(c -> (char)c)
+    .reduce(0, (count, ch) -> {
+        if (count < 0) return count; // Early termination if unbalanced
+        return ch == '(' ? count + 1 : count - 1;
+    }, (a, b) -> a + b) == 0;
+```
+
+## 5. Word Count with Sorting
+```java
+// Count words, sort by frequency descending, then alphabetically
+String text = "hello world hello java world stream";
+Map<String, Long> wordCounts = Arrays.stream(text.split("\\s+"))
+    .collect(Collectors.groupingBy(
+        Function.identity(),
+        Collectors.counting()
+    ));
+
+wordCounts.entrySet().stream()
+    .sorted(Map.Entry.<String, Long>comparingByValue()
+        .reversed()
+        .thenComparing(Map.Entry.comparingByKey()))
+    .forEach(entry -> System.out.println(entry.getKey() + ": " + entry.getValue()));
+```
+
+## 6. Partitioning by Predicate Chain
+```java
+// Partition numbers into three categories: <10, 10-20, >20
+List<Integer> numbers = Arrays.asList(5, 12, 18, 25, 3, 15, 22, 8);
+
+Map<String, List<Integer>> partitioned = numbers.stream()
+    .collect(Collectors.groupingBy(n -> {
+        if (n < 10) return "Low";
+        if (n <= 20) return "Medium";
+        return "High";
+    }));
+```
+
+## 7. Custom Collector for Statistics
+```java
+// Collector that computes multiple statistics in one pass
+class Stats {
+    double min, max, sum;
+    long count;
+    // Methods to update stats
+}
+
+Collector<Double, Stats, Stats> statsCollector = Collector.of(
+    Stats::new,
+    Stats::accept,
+    Stats::combine,
+    Collector.Characteristics.UNORDERED
+);
+
+Stats stats = Stream.of(1.0, 2.0, 3.0, 4.0).collect(statsCollector);
+```
+
+## 8. Stream Zip Operation
+```java
+// Implement zip operation to combine two streams
+static <A, B, C> Stream<C> zip(Stream<A> streamA, Stream<B> streamB, 
+                              BiFunction<A, B, C> zipper) {
+    Iterator<A> iterA = streamA.iterator();
+    Iterator<B> iterB = streamB.iterator();
+    Iterator<C> iterC = new Iterator<C>() {
+        public boolean hasNext() { return iterA.hasNext() && iterB.hasNext(); }
+        public C next() { return zipper.apply(iterA.next(), iterB.next()); }
+    };
+    return StreamSupport.stream(
+        Spliterators.spliteratorUnknownSize(iterC, Spliterator.ORDERED),
+        false
+    );
+}
+
+// Usage:
+Stream<String> names = Stream.of("Alice", "Bob", "Charlie");
+Stream<Integer> ages = Stream.of(25, 30, 35);
+zip(names, ages, (name, age) -> name + " is " + age + " years old")
+    .forEach(System.out::println);
+```
+
+## 9. Windowed Stream Processing
+```java
+// Process stream in sliding windows of size 3
+List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9);
+
+List<List<Integer>> windows = IntStream.range(0, numbers.size() - 2)
+    .mapToObj(i -> numbers.subList(i, i + 3))
+    .collect(Collectors.toList());
+```
+
+## 10. Stream Teeing Collector
+```java
+// Java 12+ teeing collector to compute both min and max
+List<Integer> nums = Arrays.asList(3, 1, 4, 1, 5, 9);
+
+Map<String, Optional<Integer>> minMax = nums.stream().collect(
+    Collectors.teeing(
+        Collectors.minBy(Integer::compareTo),
+        Collectors.maxBy(Integer::compareTo),
+        (min, max) -> Map.of("min", min, "max", max)
+    )
+);
+```
+
+## 11. Lazy File Processing
+```java
+// Process large file lazily without loading all lines into memory
+try (Stream<String> lines = Files.lines(Paths.get("huge_file.txt"))) {
+    Optional<String> firstMatch = lines
+        .filter(line -> line.contains("error"))
+        .findFirst();
+} catch (IOException e) {
+    e.printStackTrace();
+}
+```
+
+## 12. Stateful Stream Transformation
+```java
+// Add running index to stream elements without collecting first
+Stream<String> names = Stream.of("Alice", "Bob", "Charlie");
+
+AtomicInteger index = new AtomicInteger(0);
+names.map(name -> index.getAndIncrement() + ": " + name)
+     .forEach(System.out::println);
+```
+
