@@ -29,10 +29,33 @@ public interface MyFunctionalInterface {
     }
 }
 ```
+
+---
+
+### **Purpose of `@FunctionalInterface`**:
+The main purpose of this annotation is to ensure that the interface conforms to the rules of a functional interface. It is a compile-time check that guarantees the interface contains only one abstract method. This is essential because functional interfaces are intended to be used in contexts where **lambda expressions** or **method references** are used, such as **streams**, **parallel programming**, and **event handling**.
+
+### **Why should we use it**:
+- **Lambda Expression** support: Functional interfaces enable the use of lambda expressions in Java. By ensuring that your interface has only one abstract method, you can represent instances of the interface using lambda expressions, resulting in more concise and readable code.
+- **Code clarity**: The `@FunctionalInterface` annotation makes the intent clear to other developers and tools that this interface is meant to represent a single functionality, i.e., an operation or action.
+- **Compile-time safety**: Adding the `@FunctionalInterface` annotation ensures that the compiler enforces the rule that only one abstract method exists in the interface. Without this, someone might accidentally add more methods to the interface, breaking its "functional" nature.
+
+### **When to use `@FunctionalInterface`**:
+Use `@FunctionalInterface` whenever you are designing an interface that represents a **single operation**, typically where the interface is designed to work with **lambda expressions**. This is common in scenarios such as:
+- **Callbacks** (e.g., event listeners or handlers)
+- **Strategies** (e.g., functional patterns like predicates, comparators, or filters)
+- **Stream operations** (e.g., transformation or filtering functions)
+
+### **Why a Functional Interface Has Only One Method**:
+- Functional interfaces are intended to represent a single function or behavior. In lambda expressions, you are passing a behavior, not an object with many methods. For example, you can pass a function that processes data (like a comparator or predicate), and that’s what the single method allows. This ensures clarity and enforces the functional programming paradigm in J
+
+---
+
 **Key Characteristics:**
 - Single Abstract Method (SAM)
 - Can have multiple default/static methods
 - Annotation is optional but recommended
+
 
 ### 1.2 Java's Built-in Functional Interfaces
 ```mermaid

@@ -426,6 +426,240 @@ You can say:
 
 ---
 
+### Problem Overview
+
+We have:
+1. An **abstract class** with common methods.
+2. Three **concrete classes** inheriting from the abstract class and implementing an **interface**.
+3. A **manager class** that invokes the `log` method based on the type of class passed to it.
+
+We aim to:
+1. Write the required `if` logic.
+2. Improve the architecture by eliminating tight coupling and making the design SOLID.
+
+---
+
+### Initial Implementation (Without SOLID Principles)
+
+#### Code
+```java
+// Interface
+public interface Logger {
+    void log();
+}
+
+// Abstract Class
+public abstract class BaseLogger implements Logger {
+    protected String message;
+
+    public BaseLogger(String message) {
+        this.message = message;
+    }
+}
+
+// Concrete Classes
+public class FileLogger extends BaseLogger {
+    public FileLogger(String message) {
+        super(message);
+    }
+
+    @Override
+    public void log() {
+        System.out.println("FileLogger: " + message);
+    }
+}
+
+public class DatabaseLogger extends BaseLogger {
+    public DatabaseLogger(String message) {
+        super(message);
+    }
+
+    @Override
+    public void log() {
+        System.out.println("DatabaseLogger: " + message);
+    }
+}
+
+public class ConsoleLogger extends BaseLogger {
+    public ConsoleLogger(String message) {
+        super(message);
+    }
+
+    @Override
+    public void log() {
+        System.out.println("ConsoleLogger: " + message);
+    }
+}
+
+// Manager Class
+public class Manager {
+    private final BaseLogger logger;
+
+    public Manager(BaseLogger logger) {
+        this.logger = logger;
+    }
+
+    public void processLogging() {
+        if (logger instanceof FileLogger) {
+            logger.log();
+        } else if (logger instanceof DatabaseLogger) {
+            logger.log();
+        } else if (logger instanceof ConsoleLogger) {
+            logger.log();
+        } else {
+            throw new IllegalArgumentException("Unsupported logger type");
+        }
+    }
+}
+
+// Main Class
+public class Main {
+    public static void main(String[] args) {
+        Manager manager = new Manager(new FileLogger("File logging message"));
+        manager.processLogging();
+
+        manager = new Manager(new DatabaseLogger("Database logging message"));
+        manager.processLogging();
+
+        manager = new Manager(new ConsoleLogger("Console logging message"));
+        manager.processLogging();
+    }
+}
+```
+
+---
+
+### Problems with the Above Code
+
+1. **Violation of Open/Closed Principle**
+   - The `Manager` class needs modification whenever a new type of logger is added, as it relies on `if` conditions to determine behavior.
+
+2. **Violation of Single Responsibility Principle**
+   - The `Manager` class is responsible for determining the logger type and invoking the `log` method, combining two concerns.
+
+3. **Tight Coupling**
+   - `Manager` is tightly coupled with specific logger implementations.
+
+---
+
+### Improved Architecture (Using SOLID Principles)
+
+We use **Dependency Injection** and **Polymorphism** to remove `if` conditions and make the design flexible and extensible.
+
+#### Improved Code
+```java
+// Interface
+public interface Logger {
+    void log();
+}
+
+// Abstract Class
+public abstract class BaseLogger implements Logger {
+    protected String message;
+
+    public BaseLogger(String message) {
+        this.message = message;
+    }
+}
+
+// Concrete Classes
+public class FileLogger extends BaseLogger {
+    public FileLogger(String message) {
+        super(message);
+    }
+
+    @Override
+    public void log() {
+        System.out.println("FileLogger: " + message);
+    }
+}
+
+public class DatabaseLogger extends BaseLogger {
+    public DatabaseLogger(String message) {
+        super(message);
+    }
+
+    @Override
+    public void log() {
+        System.out.println("DatabaseLogger: " + message);
+    }
+}
+
+public class ConsoleLogger extends BaseLogger {
+    public ConsoleLogger(String message) {
+        super(message);
+    }
+
+    @Override
+    public void log() {
+        System.out.println("ConsoleLogger: " + message);
+    }
+}
+
+// Manager Class
+public class Manager {
+    private final Logger logger;
+
+    public Manager(Logger logger) {
+        this.logger = logger;
+    }
+
+    public void processLogging() {
+        logger.log(); // Polymorphism handles the method call
+    }
+}
+
+// Main Class
+public class Main {
+    public static void main(String[] args) {
+        Manager fileManager = new Manager(new FileLogger("File logging message"));
+        fileManager.processLogging();
+
+        Manager databaseManager = new Manager(new DatabaseLogger("Database logging message"));
+        databaseManager.processLogging();
+
+        Manager consoleManager = new Manager(new ConsoleLogger("Console logging message"));
+        consoleManager.processLogging();
+    }
+}
+```
+
+---
+
+### Explanation of the Improved Design
+
+1. **Open/Closed Principle**
+   - The `Manager` class is **open for extension but closed for modification**. Adding a new logger (e.g., `CloudLogger`) requires no changes to the `Manager`.
+
+2. **Single Responsibility Principle**
+   - The `Manager` class is responsible only for invoking the `log` method. The logger type is determined outside the `Manager`.
+
+3. **Liskov Substitution Principle**
+   - Any new `Logger` implementation can be substituted without changing the behavior of the `Manager`.
+
+4. **Dependency Inversion Principle**
+   - `Manager` depends on the `Logger` abstraction, not on concrete implementations like `FileLogger` or `DatabaseLogger`.
+
+5. **Interface Segregation Principle**
+   - The `Logger` interface is specific to logging, ensuring no unnecessary methods are forced on classes.
+
+---
+
+### Benefits of the Improved Architecture
+
+- **Scalability**: New logger types can be added without modifying existing code.
+- **Readability**: The code is cleaner and easier to understand.
+- **Flexibility**: Swapping logger implementations becomes simple.
+- **Maintainability**: The separation of concerns ensures each class focuses on a single responsibility.
+
+---
+
+### Key Takeaway
+
+Using SOLID principles in your architecture eliminates tight coupling, makes the code extensible, and reduces maintenance overhead.
+
+---
+
 ## **7. Conclusion** 🎯
 SOLID principles are **essential for writing clean, maintainable, and scalable code**. By applying these principles:
 
