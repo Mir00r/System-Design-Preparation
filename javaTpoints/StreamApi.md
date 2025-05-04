@@ -1275,3 +1275,237 @@ names.map(name -> index.getAndIncrement() + ": " + name)
      .forEach(System.out::println);
 ```
 
+---
+
+# 🚀 **Real-World Stream API Use Cases in Java Applications**
+
+Stream API has become indispensable in modern Java development. Here are practical, production-grade applications across various domains:
+
+## **1. E-Commerce Systems**
+### **Product Catalog Processing**
+```java
+// Find top-rated products in a category with price filter
+List<Product> featuredProducts = productRepository.findAll()
+    .stream()
+    .filter(p -> p.getCategory().equals("Electronics"))
+    .filter(p -> p.getPrice() < 1000)
+    .sorted(comparing(Product::getAverageRating).reversed())
+    .limit(10)
+    .collect(Collectors.toList());
+```
+
+### **Shopping Cart Analytics**
+```java
+// Calculate cart totals with discounts
+double orderTotal = cart.getItems().stream()
+    .mapToDouble(item -> 
+        item.getPrice() * item.getQuantity() * (1 - item.getDiscount()))
+    .sum();
+```
+
+## **2. Financial Services**
+### **Transaction Fraud Detection**
+```java
+// Detect suspicious transaction patterns
+List<Transaction> suspicious = transactions.stream()
+    .filter(t -> t.getAmount() > 10_000)
+    .filter(t -> !t.getOriginCountry().equals(t.getDestinationCountry()))
+    .filter(t -> t.getTime().isAfter(LocalTime.of(20, 0)))
+    .collect(Collectors.toList());
+```
+
+### **Portfolio Analysis**
+```java
+// Calculate sector-wise investment distribution
+Map<String, Double> sectorAllocation = portfolio.getHoldings().stream()
+    .collect(Collectors.groupingBy(
+        Holding::getSector,
+        Collectors.summingDouble(Holding::getValue)
+    ));
+```
+
+## **3. Healthcare Systems**
+### **Patient Data Processing**
+```java
+// Find high-risk patients for priority care
+List<Patient> highRiskPatients = patientDatabase.stream()
+    .filter(p -> p.getAge() > 65)
+    .filter(p -> p.getConditions().size() >= 3)
+    .sorted(comparing(Patient::getLastCheckup))
+    .collect(Collectors.toList());
+```
+
+### **Medical Equipment Monitoring**
+```java
+// Identify malfunctioning ICU devices
+List<Device> criticalAlerts = hospitalDevices.stream()
+    .filter(d -> d.getStatus() == Status.ACTIVE)
+    .filter(d -> d.getMetrics().stream()
+        .anyMatch(m -> m.getValue() > m.getThreshold()))
+    .collect(Collectors.toList());
+```
+
+## **4. Social Media Platforms**
+### **Content Recommendation Engine**
+```java
+// Personalized feed generation
+List<Post> userFeed = allPosts.stream()
+    .sorted(comparing(p -> 
+        -p.getRelevanceScore(user.getInterests()))) // Most relevant first
+    .filter(p -> !user.getHiddenPosts().contains(p.getId()))
+    .limit(50)
+    .collect(Collectors.toList());
+```
+
+### **Trending Hashtags Analysis**
+```java
+// Calculate top 10 trending hashtags
+List<String> trendingTags = posts.stream()
+    .flatMap(post -> post.getTags().stream())
+    .collect(Collectors.groupingBy(
+        tag -> tag,
+        Collectors.counting()
+    ))
+    .entrySet().stream()
+    .sorted(Map.Entry.<String, Long>comparingByValue().reversed())
+    .limit(10)
+    .map(Map.Entry::getKey)
+    .collect(Collectors.toList());
+```
+
+## **5. Logistics & Supply Chain**
+### **Route Optimization**
+```java
+// Find most efficient delivery routes
+List<Route> optimalRoutes = availableRoutes.stream()
+    .filter(r -> r.getCapacity() >= currentLoad)
+    .sorted(comparing(Route::getEstimatedTime)
+        .thenComparing(Route::getCost))
+    .limit(3)
+    .collect(Collectors.toList());
+```
+
+### **Inventory Management**
+```java
+// Identify items needing restock
+List<InventoryItem> toReorder = inventory.stream()
+    .filter(item -> item.getStock() < item.getReorderThreshold())
+    .sorted(comparing(InventoryItem::getLeadTime))
+    .collect(Collectors.toList());
+```
+
+## **6. Telecommunications**
+### **Network Anomaly Detection**
+```java
+// Find base stations with abnormal traffic
+List<BaseStation> problematicStations = baseStations.stream()
+    .filter(bs -> bs.getThroughput() > bs.getCapacity() * 0.9)
+    .filter(bs -> bs.getUptime() > 0.95)
+    .collect(Collectors.toList());
+```
+
+### **Customer Usage Analysis**
+```java
+// Calculate average data usage by plan type
+Map<String, Double> avgUsageByPlan = customers.stream()
+    .collect(Collectors.groupingBy(
+        Customer::getPlanType,
+        Collectors.averagingDouble(Customer::getDataUsage)
+    ));
+```
+
+## **7. IoT Systems**
+### **Sensor Data Processing**
+```java
+// Aggregate temperature readings
+Map<Room, Double> avgTemperatures = sensorReadings.stream()
+    .collect(Collectors.groupingBy(
+        Reading::getLocation,
+        Collectors.averagingDouble(Reading::getValue)
+    ));
+```
+
+### **Device Health Monitoring**
+```java
+// Identify devices needing maintenance
+List<Device> maintenanceNeeded = iotDevices.stream()
+    .filter(d -> d.getLastMaintenance().isBefore(LocalDate.now().minusMonths(6)))
+    .filter(d -> d.getErrorCount() > 5)
+    .collect(Collectors.toList());
+```
+
+## **8. Human Resources Systems**
+### **Employee Analytics**
+```java
+// Department-wise salary distribution
+Map<String, DoubleSummaryStatistics> salaryStats = employees.stream()
+    .collect(Collectors.groupingBy(
+        Employee::getDepartment,
+        Collectors.summarizingDouble(Employee::getSalary)
+    ));
+
+// Payroll processing
+List<Paycheck> paychecks = employees.stream()
+    .map(e -> new Paycheck(
+        e.getId(),
+        e.getSalary() - calculateDeductions(e),
+        LocalDate.now()
+    ))
+    .collect(Collectors.toList());
+```
+
+## **Advanced Stream Techniques**
+### **1. Multi-level Grouping**
+```java
+// Sales by region and product category
+Map<String, Map<String, Double>> salesReport = orders.stream()
+    .collect(Collectors.groupingBy(
+        Order::getRegion,
+        Collectors.groupingBy(
+            Order::getCategory,
+            Collectors.summingDouble(Order::getAmount)
+        )
+    ));
+```
+
+### **2. Parallel Processing**
+```java
+// Process large image dataset in parallel
+imageFiles.parallelStream()
+    .map(this::applyImageRecognition)
+    .filter(result -> result.getConfidence() > 0.9)
+    .forEach(this::saveAnalysisResult);
+```
+
+### **3. Custom Collectors**
+```java
+// Collect into a custom summary object
+ProductSummary summary = products.stream()
+    .collect(Collector.of(
+        ProductSummary::new,
+        (summ, p) -> {
+            summ.addPrice(p.getPrice());
+            summ.incrementCount();
+        },
+        ProductSummary::merge
+    ));
+```
+
+## **Performance Considerations**
+1. **Use primitive streams** (`IntStream`, `LongStream`) for better performance with numbers
+2. **Prefer `forEachOrdered`** over `forEach` in parallel streams when order matters
+3. **Limit parallel streams** for I/O-bound operations
+4. **Reuse streams** when possible (but remember streams are single-use)
+
+```java
+// Efficient primitive stream usage
+double totalRevenue = orders.stream()
+    .mapToDouble(Order::getAmount)
+    .sum(); // Better than reduce(0.0, Double::sum)
+```
+
+These patterns are used by major tech companies:
+- **Amazon** for real-time inventory analytics
+- **Spotify** for playlist recommendation engines
+- **LinkedIn** for connection graph analysis
+- **Banks** for real-time fraud detection

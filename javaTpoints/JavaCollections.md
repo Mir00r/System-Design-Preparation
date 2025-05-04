@@ -160,6 +160,688 @@ Nail that collections round! 💪
 
 ---
 
+## 🎯 Here are frequently asked Java Collection Framework Coding questions:
+
+## 1. ArrayList vs LinkedList
+```java
+// When should you use ArrayList vs LinkedList?
+List<Integer> arrayList = new ArrayList<>(); // Good for random access
+List<Integer> linkedList = new LinkedList<>(); // Good for frequent insertions/deletions
+
+arrayList.add(1); arrayList.add(2); arrayList.add(3);
+linkedList.add(1); linkedList.add(2); linkedList.add(3);
+
+// Input:
+System.out.println("ArrayList access: " + arrayList.get(1));
+System.out.println("LinkedList access: " + linkedList.get(1));
+
+// Output:
+// ArrayList access: 2
+// LinkedList access: 2
+// Note: ArrayList is faster for get(), LinkedList is better for add/remove in middle
+```
+
+## 2. HashMap Key Mutability
+```java
+// What happens when you modify a key in HashMap?
+Map<StringBuilder, Integer> map = new HashMap<>();
+StringBuilder key = new StringBuilder("key1");
+map.put(key, 1);
+
+key.append("modified"); // Modifying the key
+System.out.println(map.get(key));
+
+// Input:
+System.out.println("Original key: " + map.get(new StringBuilder("key1")));
+System.out.println("Modified key: " + map.get(key));
+
+// Output:
+// Original key: null
+// Modified key: 1
+// Note: Modifying keys after insertion can cause lost entries
+```
+
+## 3. ConcurrentModificationException
+```java
+// Why does this throw ConcurrentModificationException?
+List<String> list = new ArrayList<>(Arrays.asList("A", "B", "C"));
+
+// Input:
+try {
+    for (String s : list) {
+        if (s.equals("B")) {
+            list.remove(s); // Throws exception
+        }
+    }
+} catch (Exception e) {
+    System.out.println("Exception: " + e);
+}
+
+// Output:
+// Exception: java.util.ConcurrentModificationException
+// Note: Use Iterator.remove() instead when modifying during iteration
+```
+
+## 4. TreeSet Sorting
+```java
+// How does TreeSet maintain order?
+Set<Integer> treeSet = new TreeSet<>(Comparator.reverseOrder());
+treeSet.add(5);
+treeSet.add(2);
+treeSet.add(8);
+
+// Input:
+System.out.println("TreeSet contents: " + treeSet);
+
+// Output:
+// TreeSet contents: [8, 5, 2]
+// Note: TreeSet uses natural ordering or custom Comparator
+```
+
+## 5. Stream Concatenation Gotcha
+```java
+// What's the output of this code?
+Stream<String> s1 = Stream.of("A", "B", "C");
+Stream<String> s2 = Stream.of("X", "Y", "Z");
+Stream<String> combined = Stream.concat(s1, s2);
+
+// Input:
+try {
+    s1.forEach(System.out::print); // What happens here?
+} catch (Exception e) {
+    System.out.println("Exception: " + e);
+}
+
+// Output:
+// Exception: java.lang.IllegalStateException: stream has already been operated upon or closed
+// Note: Streams can't be reused after terminal operations
+```
+
+Here are 10 more advanced Java Collection Framework questions with detailed explanations in the same format to help you master collections and crack technical interviews:
+
+---
+
+## 6. Fail-Fast vs Fail-Safe Iterators
+```java
+// What's the difference between fail-fast and fail-safe iterators?
+List<String> failFastList = new ArrayList<>(Arrays.asList("A", "B", "C"));
+CopyOnWriteArrayList<String> failSafeList = new CopyOnWriteArrayList<>(Arrays.asList("X", "Y", "Z"));
+
+// Input - Fail-Fast Behavior:
+try {
+    for (String s : failFastList) {
+        if (s.equals("B")) {
+            failFastList.remove(s); // Throws ConcurrentModificationException
+        }
+    }
+} catch (Exception e) {
+    System.out.println("Fail-Fast Exception: " + e.getClass());
+}
+
+// Input - Fail-Safe Behavior:
+for (String s : failSafeList) {
+    if (s.equals("Y")) {
+        failSafeList.remove(s); // No exception
+    }
+}
+System.out.println("Fail-Safe Result: " + failSafeList);
+
+// Output:
+// Fail-Fast Exception: class java.util.ConcurrentModificationException
+// Fail-Safe Result: [X, Z]
+```
+
+---
+
+## 7. HashMap Collision Handling
+```java
+// How does HashMap handle collisions?
+Map<String, Integer> map = new HashMap<>();
+map.put("FB", 1);  // Hash: 2236
+map.put("Ea", 2);  // Hash: 2236 (Same as "FB")
+
+// Input:
+System.out.println("FB hash: " + "FB".hashCode());
+System.out.println("Ea hash: " + "Ea".hashCode());
+System.out.println("Map contents: " + map);
+
+// Output:
+// FB hash: 2236
+// Ea hash: 2236
+// Map contents: {Ea=2, FB=1}
+// Note: Uses linked list/TreeNodes (Java 8+) in buckets
+```
+
+---
+
+## 8. Comparable vs Comparator
+```java
+// Difference between Comparable and Comparator?
+class Person implements Comparable<Person> {
+    String name;
+    int age;
+    
+    // Natural ordering by age
+    public int compareTo(Person p) {
+        return this.age - p.age;
+    }
+}
+
+// Input:
+List<Person> people = Arrays.asList(
+    new Person("Alice", 30), 
+    new Person("Bob", 25)
+);
+
+Collections.sort(people); // Uses Comparable
+System.out.println("Natural Order: " + people);
+
+// Using Comparator for alternate ordering
+Collections.sort(people, (p1, p2) -> p1.name.compareTo(p2.name));
+System.out.println("Name Order: " + people);
+
+// Output:
+// Natural Order: [Bob(25), Alice(30)]
+// Name Order: [Alice(30), Bob(25)]
+```
+
+---
+
+## 9. LinkedHashMap Access Order
+```java
+// How does LinkedHashMap maintain insertion vs access order?
+Map<String, Integer> insertionOrder = new LinkedHashMap<>();
+Map<String, Integer> accessOrder = new LinkedHashMap<>(16, 0.75f, true);
+
+// Common input for both:
+String[] keys = {"A", "B", "C"};
+for (String k : keys) {
+    insertionOrder.put(k, 1);
+    accessOrder.put(k, 1);
+}
+
+// Access pattern:
+insertionOrder.get("A");
+accessOrder.get("A"); // Affects order
+
+// Output:
+System.out.println("Insertion Order: " + insertionOrder.keySet());
+System.out.println("Access Order: " + accessOrder.keySet());
+
+// Output:
+// Insertion Order: [A, B, C]
+// Access Order: [B, C, A]
+```
+
+---
+
+## 10. PriorityQueue Natural Ordering
+```java
+// How does PriorityQueue handle ordering?
+Queue<Integer> pq = new PriorityQueue<>(Comparator.reverseOrder());
+pq.add(5); pq.add(1); pq.add(10);
+
+// Input:
+System.out.print("PriorityQueue Order: ");
+while (!pq.isEmpty()) {
+    System.out.print(pq.poll() + " "); // Not FIFO!
+}
+
+// Output:
+// PriorityQueue Order: 10 5 1 
+// Note: Uses heap structure, not insertion order
+```
+
+---
+
+## 11. Collections.unmodifiableList() vs ImmutableList
+```java
+// Difference between unmodifiable and immutable collections?
+List<String> mutable = new ArrayList<>(Arrays.asList("A", "B"));
+List<String> unmodifiable = Collections.unmodifiableList(mutable);
+List<String> immutable = List.of("X", "Y");
+
+// Input - Try modifications:
+mutable.add("C"); // Affects unmodifiable view!
+try {
+    unmodifiable.add("D"); // Throws UnsupportedOperationException
+} catch (Exception e) {
+    System.out.println("unmodifiable Exception: " + e.getClass());
+}
+
+try {
+    immutable.add("Z"); // Throws UnsupportedOperationException
+} catch (Exception e) {
+    System.out.println("immutable Exception: " + e.getClass());
+}
+
+// Output:
+// unmodifiable Exception: class java.lang.UnsupportedOperationException
+// immutable Exception: class java.lang.UnsupportedOperationException
+// Note: unmodifiable is a view, immutable is truly fixed
+```
+
+---
+
+## 12. TreeMap SubMap Operations
+```java
+// How to get range views from TreeMap?
+TreeMap<Integer, String> treeMap = new TreeMap<>();
+treeMap.put(1, "A"); treeMap.put(2, "B"); 
+treeMap.put(3, "C"); treeMap.put(4, "D");
+
+// Input:
+System.out.println("SubMap (2-3): " + treeMap.subMap(2, true, 3, true));
+System.out.println("HeadMap (<=3): " + treeMap.headMap(3, true));
+System.out.println("TailMap (>=2): " + treeMap.tailMap(2, true));
+
+// Output:
+// SubMap (2-3): {2=B, 3=C}
+// HeadMap (<=3): {1=A, 2=B, 3=C}
+// TailMap (>=2): {2=B, 3=C, 4=D}
+```
+
+---
+
+## 13. Collectors.toMap() Pitfall
+```java
+// What happens with duplicate keys in Collectors.toMap()?
+List<String> items = Arrays.asList("Apple", "Banana", "Apple");
+
+// Input:
+try {
+    Map<String, Integer> map = items.stream()
+        .collect(Collectors.toMap(Function.identity(), String::length));
+} catch (Exception e) {
+    System.out.println("Exception: " + e.getClass());
+    System.out.println("Solution: Use merge function parameter");
+}
+
+// Output:
+// Exception: class java.lang.IllegalStateException
+// Solution: Use merge function parameter
+```
+
+---
+
+## 14. EnumSet Special Properties
+```java
+// Why is EnumSet more efficient than HashSet?
+enum Color { RED, GREEN, BLUE }
+Set<Color> enumSet = EnumSet.allOf(Color.class);
+Set<Color> hashSet = new HashSet<>(Arrays.asList(Color.values()));
+
+// Input:
+System.out.println("EnumSet class: " + enumSet.getClass());
+System.out.println("HashSet class: " + hashSet.getClass());
+
+// Output:
+// EnumSet class: class java.util.RegularEnumSet
+// HashSet class: class java.util.HashSet
+// Note: EnumSet uses bit vectors internally
+```
+
+---
+
+## 15. ConcurrentHashMap vs SynchronizedMap
+```java
+// Difference between ConcurrentHashMap and Collections.synchronizedMap?
+Map<String, Integer> syncMap = Collections.synchronizedMap(new HashMap<>());
+ConcurrentMap<String, Integer> concurrentMap = new ConcurrentHashMap<>();
+
+// Input - Performance test:
+long start = System.nanoTime();
+IntStream.range(0, 1000).parallel().forEach(i -> syncMap.put("k"+i, i));
+long syncTime = System.nanoTime() - start;
+
+start = System.nanoTime();
+IntStream.range(0, 1000).parallel().forEach(i -> concurrentMap.put("k"+i, i));
+long concTime = System.nanoTime() - start;
+
+System.out.println("SynchronizedMap time: " + syncTime/1000 + " μs");
+System.out.println("ConcurrentHashMap time: " + concTime/1000 + " μs");
+
+// Output (example):
+// SynchronizedMap time: 1254 μs
+// ConcurrentHashMap time: 324 μs
+// Note: ConcurrentHashMap has better throughput for concurrent access
+```
+
+Here are 15 additional advanced Java Collection Framework questions with detailed explanations to help you master collections for technical interviews:
+
+---
+
+## 16. IdentityHashMap Behavior
+```java
+// When would you use IdentityHashMap?
+Map<String, Integer> identityMap = new IdentityHashMap<>();
+String key1 = new String("key");
+String key2 = new String("key"); // Different object
+
+identityMap.put(key1, 1);
+identityMap.put(key2, 2); // Treated as different key
+
+// Input:
+System.out.println("Size: " + identityMap.size());
+System.out.println("key1 value: " + identityMap.get(key1));
+System.out.println("key2 value: " + identityMap.get(key2));
+
+// Output:
+// Size: 2
+// key1 value: 1
+// key2 value: 2
+// Note: Uses == for comparison instead of equals()
+```
+
+---
+
+## 17. WeakHashMap for Cache
+```java
+// How does WeakHashMap help in caching?
+Map<Object, String> weakMap = new WeakHashMap<>();
+Object key = new Object();
+weakMap.put(key, "value");
+
+// Input before GC:
+System.out.println("Before GC: " + weakMap.containsKey(key));
+
+key = null; // Remove strong reference
+System.gc(); // Suggestion to run GC
+
+// Input after GC:
+System.out.println("After GC: " + weakMap.isEmpty());
+
+// Output (may vary):
+// Before GC: true
+// After GC: true
+// Note: Entries are removed when keys are no longer referenced
+```
+
+---
+
+## 18. Arrays.asList() Pitfall
+```java
+// What's wrong with this code?
+List<String> list = Arrays.asList("A", "B", "C");
+
+// Input:
+try {
+    list.add("D"); // Throws UnsupportedOperationException
+} catch (Exception e) {
+    System.out.println("Exception: " + e.getClass());
+}
+
+// Output:
+// Exception: class java.lang.UnsupportedOperationException
+// Note: Returns fixed-size list backed by array
+```
+
+---
+
+## 19. NavigableSet Operations
+```java
+// How to find closest matches in TreeSet?
+NavigableSet<Integer> navigableSet = new TreeSet<>();
+navigableSet.addAll(Arrays.asList(10, 20, 30, 40, 50));
+
+// Input:
+System.out.println("Floor (<=25): " + navigableSet.floor(25));
+System.out.println("Ceiling (>=25): " + navigableSet.ceiling(25));
+System.out.println("Lower (<20): " + navigableSet.lower(20));
+System.out.println("Higher (>20): " + navigableSet.higher(20));
+
+// Output:
+// Floor (<=25): 20
+// Ceiling (>=25): 30
+// Lower (<20): 10
+// Higher (>20): 30
+```
+
+---
+
+## 20. EnumMap Performance
+```java
+// Why is EnumMap faster than HashMap for enums?
+enum Day { MON, TUE, WED }
+Map<Day, String> enumMap = new EnumMap<>(Day.class);
+Map<Day, String> hashMap = new HashMap<>();
+
+// Input - Performance comparison:
+long start = System.nanoTime();
+for (Day d : Day.values()) enumMap.put(d, "Work");
+long enumTime = System.nanoTime() - start;
+
+start = System.nanoTime();
+for (Day d : Day.values()) hashMap.put(d, "Work");
+long hashTime = System.nanoTime() - start;
+
+System.out.println("EnumMap time: " + enumTime + " ns");
+System.out.println("HashMap time: " + hashTime + " ns");
+
+// Output (example):
+// EnumMap time: 12000 ns
+// HashMap time: 45000 ns
+// Note: Uses array internally for enum ordinals
+```
+
+---
+
+## 21. ListIterator Capabilities
+```java
+// What can ListIterator do that Iterator cannot?
+List<String> names = new ArrayList<>(Arrays.asList("A", "B", "C"));
+ListIterator<String> it = names.listIterator();
+
+// Input:
+it.next(); // Move to "A"
+it.add("X"); // Add before current
+it.previous(); // Move back to "X"
+it.set("Y"); // Replace "X"
+
+System.out.println("Modified List: " + names);
+
+// Output:
+// Modified List: [Y, A, B, C]
+// Note: Can add/set during iteration and traverse backwards
+```
+
+---
+
+## 22. Collections.emptyList() vs New List
+```java
+// When to use Collections.emptyList()?
+List<String> empty1 = Collections.emptyList();
+List<String> empty2 = new ArrayList<>();
+
+// Input - Memory comparison:
+System.out.println("empty1 class: " + empty1.getClass());
+System.out.println("empty2 class: " + empty2.getClass());
+System.out.println("empty1 size: " + empty1.size());
+System.out.println("empty2 size: " + empty2.size());
+
+// Output:
+// empty1 class: class java.util.Collections$EmptyList
+// empty2 class: class java.util.ArrayList
+// empty1 size: 0
+// empty2 size: 0
+// Note: emptyList() returns immutable singleton instance
+```
+
+---
+
+## 23. Queue vs Deque Operations
+```java
+// Difference between Queue and Deque?
+Deque<Integer> deque = new ArrayDeque<>();
+deque.addFirst(1);  // [1]
+deque.addLast(2);   // [1, 2]
+deque.offerFirst(0); // [0, 1, 2]
+
+// Input:
+System.out.println("Peek First: " + deque.peekFirst());
+System.out.println("Peek Last: " + deque.peekLast());
+System.out.println("Poll Last: " + deque.pollLast());
+
+// Output:
+// Peek First: 0
+// Peek Last: 2
+// Poll Last: 2
+// Note: Deque supports operations at both ends
+```
+
+---
+
+## 24. CopyOnWriteArrayList Iterator Behavior
+```java
+// How does CopyOnWriteArrayList handle concurrent modification?
+List<String> cowList = new CopyOnWriteArrayList<>(Arrays.asList("A", "B", "C"));
+
+// Input:
+Iterator<String> it = cowList.iterator();
+cowList.add("D"); // Modifies underlying array
+
+System.out.println("Original List: " + cowList);
+System.out.print("Iterator sees: ");
+while (it.hasNext()) {
+    System.out.print(it.next() + " ");
+}
+
+// Output:
+// Original List: [A, B, C, D]
+// Iterator sees: A B C 
+// Note: Iterator works on snapshot of original array
+```
+
+---
+
+## 25. Map.computeIfAbsent()
+```java
+// How to initialize map values efficiently?
+Map<String, List<Integer>> map = new HashMap<>();
+
+// Input - Old way:
+if (!map.containsKey("key")) {
+    map.put("key", new ArrayList<>());
+}
+map.get("key").add(1);
+
+// Input - New way:
+map.computeIfAbsent("key2", k -> new ArrayList<>()).add(2);
+
+System.out.println("Map contents: " + map);
+
+// Output:
+// Map contents: {key=[1], key2=[2]}
+// Note: Atomic operation for map initialization
+```
+
+---
+
+## 26. LinkedHashSet Ordering
+```java
+// How to maintain insertion order in Set?
+Set<String> linkedHashSet = new LinkedHashSet<>();
+linkedHashSet.add("B");
+linkedHashSet.add("A");
+linkedHashSet.add("C");
+linkedHashSet.add("A"); // Duplicate
+
+// Input:
+System.out.println("LinkedHashSet: " + linkedHashSet);
+System.out.println("HashSet: " + new HashSet<>(linkedHashSet));
+
+// Output:
+// LinkedHashSet: [B, A, C]
+// HashSet: [A, B, C]
+// Note: Maintains insertion order while preventing duplicates
+```
+
+---
+
+## 27. Collections.rotate()
+```java
+// How to rotate list elements?
+List<Integer> nums = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5));
+
+// Input:
+Collections.rotate(nums, 2); // Rotate right by 2
+System.out.println("Rotated Right: " + nums);
+
+Collections.rotate(nums, -1); // Rotate left by 1
+System.out.println("Rotated Left: " + nums);
+
+// Output:
+// Rotated Right: [4, 5, 1, 2, 3]
+// Rotated Left: [5, 1, 2, 3, 4]
+```
+
+---
+
+## 28. TreeMap Comparator Gotcha
+```java
+// What's wrong with this TreeMap?
+TreeMap<String, Integer> treeMap = new TreeMap<>(
+    (s1, s2) -> s2.length() - s1.length() // Broken comparator
+);
+
+treeMap.put("A", 1);
+treeMap.put("BB", 2);
+
+// Input:
+try {
+    treeMap.put("CC", 3); // Throws exception
+} catch (Exception e) {
+    System.out.println("Exception: " + e.getClass());
+}
+
+// Output:
+// Exception: class java.lang.IllegalArgumentException
+// Note: Comparator violates contract (A vs CC same length as BB)
+```
+
+---
+
+## 29. Stream to Immutable Collection
+```java
+// How to create immutable collection from Stream?
+List<String> immutableList = Stream.of("A", "B", "C")
+    .collect(Collectors.collectingAndThen(
+        Collectors.toList(),
+        Collections::unmodifiableList
+    ));
+
+// Input:
+try {
+    immutableList.add("D");
+} catch (Exception e) {
+    System.out.println("Exception: " + e.getClass());
+}
+
+// Output:
+// Exception: class java.lang.UnsupportedOperationException
+// Note: Proper way to create immutable collections from streams
+```
+
+---
+
+## 30. ConcurrentSkipListSet
+```java
+// When to use ConcurrentSkipListSet?
+ConcurrentNavigableSet<Integer> skipListSet = new ConcurrentSkipListSet<>();
+skipListSet.addAll(Arrays.asList(5, 3, 7, 1));
+
+// Input - Thread-safe operations:
+System.out.println("HeadSet (<=5): " + skipListSet.headSet(5, true));
+System.out.println("TailSet (>=3): " + skipListSet.tailSet(3, true));
+
+// Output:
+// HeadSet (<=5): [1, 3, 5]
+// TailSet (>=3): [3, 5, 7]
+// Note: Thread-safe alternative to TreeSet
+```
+
+---
+
 ## Here are some **frequently asked Java Collections questions** along with their answers that are commonly encountered in technical interviews:
 
 ### 1. **What are the main interfaces in the Java Collections Framework?**
