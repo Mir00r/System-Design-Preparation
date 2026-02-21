@@ -12,6 +12,10 @@ Each guide is structured with detailed explanations, practical examples, real-wo
 | Guide | Description | Topics Covered |
 |-------|-------------|----------------|
 | **[File System Commands](File_System_Commands.md)** | File and directory operations | Navigation, CRUD operations, permissions, finding files, compression, disk usage |
+| **[SSH & Remote Management](SSH_Remote_Management.md)** | Remote server access and management | SSH keys, config, tunneling, file transfer (scp/rsync/sftp), remote execution |
+| **[Disk Management](Disk_Management.md)** | Storage and filesystem management | Partitioning, LVM, RAID, filesystem operations, mounting, disk performance |
+| **[Log Management](Log_Management.md)** | System and application logging | journalctl, log rotation, rsyslog, log analysis, centralized logging (ELK) |
+| **[Security & Firewall](Security_Firewall_Commands.md)** | System security and protection | iptables, firewalld, ufw, SELinux, AppArmor, security auditing, SSL/TLS |
 | **[Text Processing Commands](Text_Processing_Commands.md)** | Log analysis and data manipulation | grep, sed, awk, cut, sort, uniq, regular expressions |
 | **[System Monitoring Commands](System_Monitoring_Commands.md)** | Performance tracking and diagnostics | Processes, memory, CPU, disk I/O, logs, debugging tools |
 | **[Network Commands](Network_Commands.md)** | Networking and connectivity | Configuration, testing, DNS, HTTP, SSH, traffic analysis, troubleshooting |
@@ -33,10 +37,32 @@ Each guide is structured with detailed explanations, practical examples, real-wo
 4. 📊 [System Monitoring Commands](System_Monitoring_Commands.md) - Monitor system performance
 5. ⚙️ [Process Management](Process_Management.md) - Control running processes
 6. 📦 [Package Management](Package_Management.md) - Install and manage software
+7. 📄 [Log Management](Log_Management.md) - Understand and analyze system logs
 
-### **Advanced**
-7. 🌐 [Network Commands](Network_Commands.md) - Network troubleshooting and configuration
-8. 👥 [User & Permissions Management](User_Permissions_Management.md) - Security and access control
+### **Advanced DevOps**
+8. 🔐 [SSH & Remote Management](SSH_Remote_Management.md) - Master remote server access
+9. 🌐 [Network Commands](Network_Commands.md) - Network troubleshooting and configuration
+10. 💾 [Disk Management](Disk_Management.md) - Storage and filesystem management
+11. 🛡️ [Security & Firewall](Security_Firewall_Commands.md) - Harden and secure your systems
+12. 👥 [User & Permissions Management](User_Permissions_Management.md) - Advanced access control
+
+### **DevOps Professional** (Complete Path)
+**Week 1-2**: Foundations
+- File System, Text Processing, Quick Reference
+
+**Week 3-4**: System Administration
+- System Monitoring, Process Management, Package Management, Log Management
+
+**Week 5-6**: Infrastructure & Security
+- SSH & Remote Management, Network Commands, Disk Management
+
+**Week 7-8**: Security & Production Ready
+- Security & Firewall, User & Permissions, Review all guides
+
+**Interview Preparation** (1-2 weeks)
+- Review Interview Cheat Sheet sections in each guide
+- Practice practical scenarios
+- Complete hands-on labs
 
 ---
 
@@ -83,24 +109,27 @@ chown user:group file        # Change owner
 ## **💡 Use Cases by Role**
 
 ### **DevOps Engineer**
-- **Infrastructure Management**: [System Monitoring](System_Monitoring_Commands.md), [Process Management](Process_Management.md)
-- **Deployment**: [Package Management](Package_Management.md), [User & Permissions](User_Permissions_Management.md)
-- **Troubleshooting**: [Network Commands](Network_Commands.md), [Text Processing](Text_Processing_Commands.md)
+- **Infrastructure Management**: [System Monitoring](System_Monitoring_Commands.md), [Process Management](Process_Management.md), [Disk Management](Disk_Management.md)
+- **Deployment**: [Package Management](Package_Management.md), [SSH & Remote Management](SSH_Remote_Management.md)
+- **Security**: [Security & Firewall](Security_Firewall_Commands.md), [User & Permissions](User_Permissions_Management.md)
+- **Troubleshooting**: [Network Commands](Network_Commands.md), [Text Processing](Text_Processing_Commands.md), [Log Management](Log_Management.md)
 
 ### **SRE (Site Reliability Engineer)**
-- **Performance Tuning**: [System Monitoring](System_Monitoring_Commands.md)
-- **Log Analysis**: [Text Processing](Text_Processing_Commands.md)
-- **Incident Response**: [Quick Reference Cheatsheet](Linux_Commands_Cheatsheet.md)
+- **Performance Tuning**: [System Monitoring](System_Monitoring_Commands.md), [Disk Management](Disk_Management.md)
+- **Log Analysis**: [Text Processing](Text_Processing_Commands.md), [Log Management](Log_Management.md)
+- **Incident Response**: [Quick Reference Cheatsheet](Linux_Commands_Cheatsheet.md), [SSH & Remote Management](SSH_Remote_Management.md)
+- **Security**: [Security & Firewall](Security_Firewall_Commands.md)
 
 ### **System Administrator**
 - **User Management**: [User & Permissions](User_Permissions_Management.md)
 - **Software Management**: [Package Management](Package_Management.md)
-- **System Maintenance**: [File System Commands](File_System_Commands.md)
+- **System Maintenance**: [File System Commands](File_System_Commands.md), [Disk Management](Disk_Management.md)
+- **Remote Access**: [SSH & Remote Management](SSH_Remote_Management.md)
 
 ### **Security Engineer**
-- **Access Control**: [User & Permissions](User_Permissions_Management.md)
-- **Network Security**: [Network Commands](Network_Commands.md)
-- **Audit & Compliance**: [System Monitoring](System_Monitoring_Commands.md)
+- **Access Control**: [User & Permissions](User_Permissions_Management.md), [SSH & Remote Management](SSH_Remote_Management.md)
+- **Network Security**: [Network Commands](Network_Commands.md), [Security & Firewall](Security_Firewall_Commands.md)
+- **Audit & Compliance**: [System Monitoring](System_Monitoring_Commands.md), [Log Management](Log_Management.md)
 
 ---
 
@@ -174,6 +203,52 @@ sudo systemctl start app
 ```
 📖 See: [Package Management](Package_Management.md), [User & Permissions](User_Permissions_Management.md)
 
+**5. Secure Server Setup**
+```bash
+# Enable firewall
+sudo ufw enable
+sudo ufw allow 22/tcp
+sudo ufw allow 80/tcp
+sudo ufw allow 443/tcp
+
+# Harden SSH
+sudo sed -i 's/#PermitRootLogin yes/PermitRootLogin no/' /etc/ssh/sshd_config
+sudo systemctl restart sshd
+
+# Setup fail2ban
+sudo apt install fail2ban
+sudo systemctl enable fail2ban
+```
+📖 See: [Security & Firewall](Security_Firewall_Commands.md), [SSH & Remote Management](SSH_Remote_Management.md)
+
+**6. Disk Space Management**
+```bash
+# Check disk usage
+df -h
+du -sh /var/log/*
+
+# Find large files
+find / -type f -size +100M -exec ls -lh {} \;
+
+# Clean up
+sudo journalctl --vacuum-time=7d
+sudo apt autoremove
+```
+📖 See: [Disk Management](Disk_Management.md), [File System Commands](File_System_Commands.md)
+
+**7. Log Analysis for Errors**
+```bash
+# View recent errors
+sudo journalctl -p err -n 50
+
+# Analyze application logs
+grep -i error /var/log/app.log | tail -20
+
+# Monitor logs in real-time
+sudo tail -f /var/log/syslog | grep -i error
+```
+📖 See: [Log Management](Log_Management.md), [Text Processing](Text_Processing_Commands.md)
+
 ---
 
 ## **📖 Features of Each Guide**
@@ -201,20 +276,27 @@ Each guide contains an **Interview Cheat Sheet** section with:
 - Best practices
 
 **Top Interview Topics:**
-1. File permissions (chmod, chown, umask)
-2. Process management (ps, kill, systemctl)
-3. Text processing (grep, sed, awk)
-4. Network troubleshooting (ping, netstat, tcpdump)
-5. System monitoring (top, free, df)
+1. File permissions (chmod, chown, umask) - [User & Permissions](User_Permissions_Management.md)
+2. Process management (ps, kill, systemctl) - [Process Management](Process_Management.md)
+3. Text processing (grep, sed, awk) - [Text Processing](Text_Processing_Commands.md)
+4. Network troubleshooting (ping, netstat, tcpdump) - [Network Commands](Network_Commands.md)
+5. System monitoring (top, free, df) - [System Monitoring](System_Monitoring_Commands.md)
+6. SSH configuration and key management - [SSH & Remote Management](SSH_Remote_Management.md)
+7. Firewall configuration (iptables, firewalld, ufw) - [Security & Firewall](Security_Firewall_Commands.md)
+8. Disk and filesystem management (LVM, partitions) - [Disk Management](Disk_Management.md)
+9. Log analysis and management - [Log Management](Log_Management.md)
+10. Package management and updates - [Package Management](Package_Management.md)
 
 ---
 
 ## **🔧 Additional Resources**
 
 ### **Related Topics**
-- 🐳 [Docker](../Docker.md) - Container management
+- 🐳 [Docker](../Docker/) - Container management and orchestration
 - ☸️ [Kubernetes](../Kubernetes.md) - Container orchestration
 - 📜 [Shell Scripting](../ShellScripting.md) - Bash scripting fundamentals
+- 🔄 [CI/CD](../CI-CD/) - Continuous Integration and Deployment
+- 🔧 [Git](../Git/) - Version control
 
 ### **Online Tools**
 - [ExplainShell](https://explainshell.com) - Explain shell commands
@@ -332,6 +414,14 @@ Based on:
 | Need | Go To |
 |------|-------|
 | **Find a file** | [File System Commands](File_System_Commands.md#6-finding-files) |
+| **SSH to server** | [SSH & Remote Management](SSH_Remote_Management.md#2-ssh-basics) |
+| **Transfer files** | [SSH & Remote Management](SSH_Remote_Management.md#5-secure-file-transfer) |
+| **Partition disk** | [Disk Management](Disk_Management.md#3-disk-partitioning) |
+| **Setup LVM** | [Disk Management](Disk_Management.md#6-lvm-logical-volume-manager) |
+| **View logs** | [Log Management](Log_Management.md#4-journalctl-systemd-logs) |
+| **Rotate logs** | [Log Management](Log_Management.md#5-log-rotation-logrotate) |
+| **Configure firewall** | [Security & Firewall](Security_Firewall_Commands.md#3-firewalld---dynamic-firewall) |
+| **Setup iptables** | [Security & Firewall](Security_Firewall_Commands.md#2-iptables---traditional-firewall) |
 | **Analyze logs** | [Text Processing](Text_Processing_Commands.md#3-grep---pattern-matching) |
 | **High CPU** | [System Monitoring](System_Monitoring_Commands.md#10-practical-devops-scenarios) |
 | **Network down** | [Network Commands](Network_Commands.md#10-practical-devops-scenarios) |
