@@ -25,6 +25,21 @@ Complete gamified tutorial series designed for interview preparation:
 
 👉 **[Start Your Data Structures Journey →](./DataStructures/README.md)**
 
+### 🧮 Algorithms Mastery (NEW! 🚀)
+Comprehensive algorithm tutorial series with 177+ practice problems:
+- **Sorting Algorithms**: 8 sorting techniques (Bubble→Radix) with O(n log n) mastery
+- **Searching Algorithms**: Binary search & all variations (rotated, 2D, answer space)
+- **Recursion & Backtracking**: N-Queens, Sudoku, permutations, combinations
+- **Dynamic Programming**: 10 core patterns (Knapsack, LCS, LIS, Edit Distance)
+- **Greedy Algorithms**: Activity selection, Huffman, Dijkstra, MST
+- **Graph Algorithms**: BFS, DFS, shortest path, topological sort, SCC
+- **String Algorithms**: KMP, Rabin-Karp, Z-algorithm, pattern matching
+- **Bit Manipulation**: XOR tricks, bit masking, optimization techniques
+- **Interview Patterns**: Pattern recognition for 60+ algorithms
+- **Real-World Applications**: How Google, Amazon, Netflix use algorithms
+
+👉 **[Start Your Algorithm Journey →](./Algorithms/README.md)**
+
 ### Core System Design Concepts
 - **Building Blocks**
   - Caching strategies and implementations
