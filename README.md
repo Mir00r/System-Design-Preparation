@@ -10,6 +10,21 @@ Our mission is to provide a structured, comprehensive, and practical guide for s
 
 This repository contains detailed documentation and practical examples covering:
 
+### 🎓 Data Structures & Algorithms (NEW! 🚀)
+Complete gamified tutorial series designed for interview preparation:
+- **Arrays & ArrayList**: Foundation with patterns (Two Pointers, Sliding Window, Prefix Sum)
+- **LinkedList**: Fast & Slow Pointers, reversal, merge techniques
+- **Stacks & Queues**: LIFO/FIFO operations, monotonic stack patterns
+- **Hash Tables**: O(1) lookups, collision handling, common patterns
+- **Trees**: Binary trees, BST, traversals, path problems
+- **Graphs**: BFS, DFS, shortest path, topological sort
+- **Heaps**: Priority queues, Top K problems, median finding
+- **Problem-Solving Patterns**: 15+ proven interview patterns
+- **LeetCode Integration**: 100+ curated problems mapped to concepts
+- **Real-World Applications**: How FAANG companies use these structures
+
+👉 **[Start Your Data Structures Journey →](./DataStructures/README.md)**
+
 ### Core System Design Concepts
 - **Building Blocks**
   - Caching strategies and implementations
