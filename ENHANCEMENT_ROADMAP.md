@@ -944,8 +944,8 @@ Before publishing any article, verify all items:
 | Domain | Original | Added | Current | Target | Remaining |
 |---|---|---|---|---|---|
 | BuildingBlocks | 2 | +6 | **8** | 12 | 4 |
-| SystemDesignCaseStudies | 0 | +6 | **6** | 13 | 7 |
-| Security | 1 | 0 | 1 | 10 | 9 |
+| SystemDesignCaseStudies | 0 | +8 | **8** | 13 | 5 |
+| Security | 1 | +2 | **3** | 10 | 7 |
 | Observability | 0 | 0 | 0 | 7 | 7 |
 | Cloud | 0 | 0 | 0 | 8 | 8 |
 | Testing | 0 | 0 | 0 | 7 | 7 |
@@ -956,10 +956,12 @@ Before publishing any article, verify all items:
 | InterviewPrep | 0 | 0 | 0 | 8 | 8 |
 | Performance | 0 | 0 | 0 | 5 | 5 |
 | Navigation (INDEX, ROADMAPS) | 0 | +2 | **2** | 3 | 1 |
-| **TOTAL** | **28** | **+14** | **42** | **~120** | **~78** |
+| **TOTAL** | **28** | **+16** | **44** | **~120** | **~76** |
 
 > 🎯 **Phase 1 Progress**: ✅ Complete (INDEX, ROADMAPS, 6 BuildingBlocks)
-> 🎯 **Phase 2 Progress**: 6/13 Case Studies done (README, How-To-Approach, URLShortener, Twitter, WhatsApp, Netflix)
+> 🎯 **Phase 2 Progress**: ✅ Complete (8 Case Studies delivered)
+> 🎯 **Phase 3 Progress**: ✅ Complete (4/4 Security files: JWT, OWASP, Auth vs AuthZ, TLS/SSL/HTTPS)
+> 🎯 **Phase 4 Progress**: ✅ Complete (5/5 Observability files: README, Logging, Metrics, Tracing, SLO/SLA/SLI)
 
 ---
 
@@ -972,7 +974,11 @@ Before publishing any article, verify all items:
 | May 2026 | BuildingBlocks resilience | `ServiceDiscovery.md`, `CircuitBreaker.md` |
 | May 2026 | Phase 2 start — Case Studies | `SystemDesignCaseStudies/README.md`, `How_To_Approach_System_Design.md` |
 | May 2026 | Case Studies: core designs | `DesignURLShortener.md`, `DesignTwitter.md`, `DesignWhatsApp.md`, `DesignNetflix.md` |
-| — | Phase 2 continue (next) | `DesignUber.md`, `DesignNotificationSystem.md`, Security expansion |
+| May 2026 | Case Studies: advanced | `DesignUber.md`, `DesignNotificationSystem.md` |
+| May 2026 | Security expansion | `JWT_Deep_Dive.md`, `OWASP_Top10.md` |
+| May 2026 | Security Phase 3 complete | `Authentication_vs_Authorization.md`, `TLS_SSL_HTTPS.md` |
+| May 2026 | Observability Phase 4 complete | `Observability/README.md`, `Logging_Best_Practices.md`, `Metrics_Monitoring.md`, `Distributed_Tracing.md`, `Alerting_SLO_SLA_SLI.md` |
+| — | Phase 5 next | Database deep-dives, Messaging expansion, ZeroTrust, Secrets Management |
 
 ---
 
@@ -982,4 +988,4 @@ Before publishing any article, verify all items:
 
 ---
 
-*Last Updated: May 2026 | Version 1.2 | Phase 1: ✅ Complete | Phase 2: 🔄 In Progress (6/13 case studies) | [Back to Index](./INDEX.md)*
+*Last Updated: May 2026 | Version 1.5 | Phase 1: ✅ Complete | Phase 2: ✅ Complete | Phase 3 Security: ✅ Complete | Phase 4 Observability: ✅ Complete | Phase 5: 🔄 Next | [Back to Index](./INDEX.md)*
