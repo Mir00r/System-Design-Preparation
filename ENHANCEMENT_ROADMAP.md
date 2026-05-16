@@ -944,7 +944,7 @@ Before publishing any article, verify all items:
 | Domain | Original | Added | Current | Target | Remaining |
 |---|---|---|---|---|---|
 | BuildingBlocks | 2 | +6 | **8** | 12 | 4 |
-| SystemDesignCaseStudies | 0 | 0 | 0 | 13 | 13 |
+| SystemDesignCaseStudies | 0 | +6 | **6** | 13 | 7 |
 | Security | 1 | 0 | 1 | 10 | 9 |
 | Observability | 0 | 0 | 0 | 7 | 7 |
 | Cloud | 0 | 0 | 0 | 8 | 8 |
@@ -956,9 +956,10 @@ Before publishing any article, verify all items:
 | InterviewPrep | 0 | 0 | 0 | 8 | 8 |
 | Performance | 0 | 0 | 0 | 5 | 5 |
 | Navigation (INDEX, ROADMAPS) | 0 | +2 | **2** | 3 | 1 |
-| **TOTAL** | **28** | **+8** | **36** | **~120** | **~84** |
+| **TOTAL** | **28** | **+14** | **42** | **~120** | **~78** |
 
-> 🎯 **Phase 1 Progress**: 8/9 tasks complete (~89%). INDEX.md, ROADMAPS.md, and 6 BuildingBlocks files delivered. Remaining: README standardization.
+> 🎯 **Phase 1 Progress**: ✅ Complete (INDEX, ROADMAPS, 6 BuildingBlocks)
+> 🎯 **Phase 2 Progress**: 6/13 Case Studies done (README, How-To-Approach, URLShortener, Twitter, WhatsApp, Netflix)
 
 ---
 
@@ -969,7 +970,9 @@ Before publishing any article, verify all items:
 | May 2026 | Phase 1 start — Navigation | `INDEX.md`, `ROADMAPS.md` |
 | May 2026 | BuildingBlocks critical gap | `LoadBalancing.md`, `CDN.md`, `RateLimiting.md`, `APIGateway.md` |
 | May 2026 | BuildingBlocks resilience | `ServiceDiscovery.md`, `CircuitBreaker.md` |
-| — | Phase 2 start (next) | `SystemDesignCaseStudies/`, Security expansion, Observability |
+| May 2026 | Phase 2 start — Case Studies | `SystemDesignCaseStudies/README.md`, `How_To_Approach_System_Design.md` |
+| May 2026 | Case Studies: core designs | `DesignURLShortener.md`, `DesignTwitter.md`, `DesignWhatsApp.md`, `DesignNetflix.md` |
+| — | Phase 2 continue (next) | `DesignUber.md`, `DesignNotificationSystem.md`, Security expansion |
 
 ---
 
@@ -979,4 +982,4 @@ Before publishing any article, verify all items:
 
 ---
 
-*Last Updated: May 2026 | Version 1.1 | Phase 1: ✅ 89% complete | [Back to Index](./INDEX.md)*
+*Last Updated: May 2026 | Version 1.2 | Phase 1: ✅ Complete | Phase 2: 🔄 In Progress (6/13 case studies) | [Back to Index](./INDEX.md)*
