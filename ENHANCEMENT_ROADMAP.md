@@ -959,9 +959,10 @@ Before publishing any article, verify all items:
 | **TOTAL** | **28** | **+16** | **44** | **~120** | **~76** |
 
 > 🎯 **Phase 1 Progress**: ✅ Complete (INDEX, ROADMAPS, 6 BuildingBlocks)
-> 🎯 **Phase 2 Progress**: ✅ Complete (8 Case Studies delivered)
-> 🎯 **Phase 3 Progress**: ✅ Complete (4/4 Security files: JWT, OWASP, Auth vs AuthZ, TLS/SSL/HTTPS)
+> 🎯 **Phase 2 Progress**: ✅ Complete (10 Case Studies: URL Shortener, Twitter, WhatsApp, Netflix, Uber, Notification, Payment, RateLimiter + more)
+> 🎯 **Phase 3 Progress**: ✅ Complete (6/6 Security files: JWT, OWASP, Auth vs AuthZ, TLS/SSL/HTTPS, ZeroTrust, Secrets Management)
 > 🎯 **Phase 4 Progress**: ✅ Complete (5/5 Observability files: README, Logging, Metrics, Tracing, SLO/SLA/SLI)
+> 🎯 **Phase 5 Progress**: 🔄 Next — Database deep-dives, Messaging expansion (RabbitMQ, SQS, comparison)
 
 ---
 
@@ -978,7 +979,9 @@ Before publishing any article, verify all items:
 | May 2026 | Security expansion | `JWT_Deep_Dive.md`, `OWASP_Top10.md` |
 | May 2026 | Security Phase 3 complete | `Authentication_vs_Authorization.md`, `TLS_SSL_HTTPS.md` |
 | May 2026 | Observability Phase 4 complete | `Observability/README.md`, `Logging_Best_Practices.md`, `Metrics_Monitoring.md`, `Distributed_Tracing.md`, `Alerting_SLO_SLA_SLI.md` |
-| — | Phase 5 next | Database deep-dives, Messaging expansion, ZeroTrust, Secrets Management |
+| May 2026 | Security Phase 3 extended | `ZeroTrust_Architecture.md`, `Secrets_Management.md` |
+| May 2026 | Case Studies Phase 2 extended | `DesignPaymentSystem.md`, `DesignRateLimiter.md` |
+| — | Phase 5 next | `Database/Redis_Deep_Dive.md`, `MessagingQ/RabbitMQ.md`, `MessagingQ/MessageQueue_Comparison.md`, `Microservices/ServiceMesh.md` |
 
 ---
 
@@ -988,4 +991,4 @@ Before publishing any article, verify all items:
 
 ---
 
-*Last Updated: May 2026 | Version 1.5 | Phase 1: ✅ Complete | Phase 2: ✅ Complete | Phase 3 Security: ✅ Complete | Phase 4 Observability: ✅ Complete | Phase 5: 🔄 Next | [Back to Index](./INDEX.md)*
+*Last Updated: May 2026 | Version 1.6 | Phase 1: ✅ Complete | Phase 2: ✅ Complete | Phase 3 Security: ✅ Complete | Phase 4 Observability: ✅ Complete | Phase 5 Database+Messaging: 🔄 Next | [Back to Index](./INDEX.md)*
