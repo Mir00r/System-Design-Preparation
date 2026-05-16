@@ -820,59 +820,61 @@ Design Patterns → REST APIs → Database Basics → Docker
 ### Phase 1 — Foundation (Weeks 1-2)
 **Goal**: Fix navigation and critical gaps
 
-| Task | Priority | Effort |
-|---|---|---|
-| Create `INDEX.md` — master navigation hub | 🔴 Critical | Medium |
-| Create `ROADMAPS.md` — all learning tracks | 🔴 Critical | Medium |
-| Add `LoadBalancing.md` to BuildingBlocks | 🔴 Critical | Medium |
-| Add `CDN.md` to BuildingBlocks | 🔴 Critical | Medium |
-| Add `RateLimiting.md` to BuildingBlocks | 🔴 Critical | Medium |
-| Add `APIGateway.md` to BuildingBlocks | 🔴 Critical | Medium |
-| Standardize all existing README files | 🔴 Critical | Low |
+| Task | Priority | Effort | Status |
+|---|---|---|---|
+| Create `INDEX.md` — master navigation hub | 🔴 Critical | Medium | ✅ Done (May 2026) |
+| Create `ROADMAPS.md` — all learning tracks | 🔴 Critical | Medium | ✅ Done (May 2026) |
+| Add `LoadBalancing.md` to BuildingBlocks | 🔴 Critical | Medium | ✅ Done (May 2026) |
+| Add `CDN.md` to BuildingBlocks | 🔴 Critical | Medium | ✅ Done (May 2026) |
+| Add `RateLimiting.md` to BuildingBlocks | 🔴 Critical | Medium | ✅ Done (May 2026) |
+| Add `APIGateway.md` to BuildingBlocks | 🔴 Critical | Medium | ✅ Done (May 2026) |
+| Add `ServiceDiscovery.md` to BuildingBlocks | 🔴 Critical | Medium | ✅ Done (May 2026) |
+| Add `CircuitBreaker.md` to BuildingBlocks | 🔴 Critical | Medium | ✅ Done (May 2026) |
+| Standardize all existing README files | 🔴 Critical | Low | 🔄 In Progress |
 
 ### Phase 2 — Core Expansion (Weeks 3-6)
 **Goal**: System design case studies + security
 
-| Task | Priority | Effort |
-|---|---|---|
-| Create `SystemDesignCaseStudies/` domain | 🔴 Critical | High |
-| Add 5 foundational case studies (URL, Twitter, Uber, WhatsApp, Netflix) | 🔴 Critical | High |
-| Expand Security to 8 files | 🔴 Critical | Medium |
-| Create `Observability/` domain (7 files) | 🟡 High | Medium |
-| Add remaining BuildingBlocks (6 more) | 🟡 High | Medium |
+| Task | Priority | Effort | Status |
+|---|---|---|---|
+| Create `SystemDesignCaseStudies/` domain | 🔴 Critical | High | 🔄 Next |
+| Add 5 foundational case studies (URL, Twitter, Uber, WhatsApp, Netflix) | 🔴 Critical | High | 🔄 Planned |
+| Expand Security to 8 files | 🔴 Critical | Medium | 🔄 Planned |
+| Create `Observability/` domain (7 files) | 🟡 High | Medium | 🔄 Planned |
+| Add remaining BuildingBlocks (Proxy, Blob, Search, MQ overview) | 🟡 High | Medium | 🔄 Planned |
 
 ### Phase 3 — Database & Cloud (Weeks 7-10)
 **Goal**: NoSQL deep dives and cloud guide
 
-| Task | Priority | Effort |
-|---|---|---|
-| Add Redis, MongoDB, Cassandra, ES deep dives | 🟡 High | High |
-| Create `Cloud/AWS/` section | 🟡 High | High |
-| Add KeyConcepts: Replication, Consensus, FaultTolerance | 🟡 High | Medium |
-| Add MessagingQ: RabbitMQ, SQS, comparison | 🟡 High | Medium |
+| Task | Priority | Effort | Status |
+|---|---|---|---|
+| Add Redis, MongoDB, Cassandra, ES deep dives | 🟡 High | High | 🔄 Planned |
+| Create `Cloud/AWS/` section | 🟡 High | High | 🔄 Planned |
+| Add KeyConcepts: Replication, Consensus, FaultTolerance | 🟡 High | Medium | 🔄 Planned |
+| Add MessagingQ: RabbitMQ, SQS, comparison | 🟡 High | Medium | 🔄 Planned |
 
 ### Phase 4 — Refinement & Polish (Weeks 11-14)
 **Goal**: Cross-linking, engagement features, testing
 
-| Task | Priority | Effort |
-|---|---|---|
-| Add cross-references to ALL existing articles | 🟡 High | Medium |
-| Create `Testing/` domain | 🟢 Medium | Medium |
-| Expand Microservices (6 new files) | 🟢 Medium | Medium |
-| Restructure Behavioral section | 🟢 Medium | Low |
-| Create `InterviewPrep/` with 30/60/90 day plans | 🟢 Medium | Medium |
-| Merge javaTpoints into Java/ domain | 🟢 Medium | Low |
+| Task | Priority | Effort | Status |
+|---|---|---|---|
+| Add cross-references to ALL existing articles | 🟡 High | Medium | 🔄 Planned |
+| Create `Testing/` domain | 🟢 Medium | Medium | 🔄 Planned |
+| Expand Microservices (6 new files) | 🟢 Medium | Medium | 🔄 Planned |
+| Restructure Behavioral section | 🟢 Medium | Low | 🔄 Planned |
+| Create `InterviewPrep/` with 30/60/90 day plans | 🟢 Medium | Medium | 🔄 Planned |
+| Merge javaTpoints into Java/ domain | 🟢 Medium | Low | 🔄 Planned |
 
 ### Phase 5 — Advanced Content (Weeks 15+)
 **Goal**: Advanced topics for senior engineers
 
-| Task | Priority | Effort |
-|---|---|---|
-| Add `Performance/` domain | 🟢 Medium | Medium |
-| Add 7 more case studies | 🟢 Medium | High |
-| Add DDD, Clean Code, Laws & Theories articles | 🟢 Medium | Medium |
-| Create Concept Map visual | 🟢 Medium | Low |
-| Add `Cloud/GCP/` section | 🟢 Medium | Medium |
+| Task | Priority | Effort | Status |
+|---|---|---|---|
+| Add `Performance/` domain | 🟢 Medium | Medium | 🔄 Planned |
+| Add 7 more case studies | 🟢 Medium | High | 🔄 Planned |
+| Add DDD, Clean Code, Laws & Theories articles | 🟢 Medium | Medium | 🔄 Planned |
+| Create Concept Map visual | 🟢 Medium | Low | 🔄 Planned |
+| Add `Cloud/GCP/` section | 🟢 Medium | Medium | 🔄 Planned |
 
 ---
 
@@ -939,22 +941,35 @@ Before publishing any article, verify all items:
 
 ## 📊 Current vs Target State Summary
 
-| Domain | Current Files | Target Files | Gap |
-|---|---|---|---|
-| BuildingBlocks | 2 | 12 | +10 |
-| SystemDesignCaseStudies | 0 | 13 | +13 |
-| Security | 1 | 10 | +9 |
-| Observability | 0 | 7 | +7 |
-| Cloud | 0 | 8 | +8 |
-| Testing | 0 | 7 | +7 |
-| MessagingQ | 1 | 6 | +5 |
-| KeyConcepts | 5 | 10 | +5 |
-| Database | 9 | 15 | +6 |
-| Microservices | 10 | 16 | +6 |
-| InterviewPrep | 0 | 8 | +8 |
-| Performance | 0 | 5 | +5 |
-| **Navigation (INDEX, ROADMAPS)** | 0 | 3 | +3 |
-| **TOTAL NEW FILES** | | | **~102** |
+| Domain | Original | Added | Current | Target | Remaining |
+|---|---|---|---|---|---|
+| BuildingBlocks | 2 | +6 | **8** | 12 | 4 |
+| SystemDesignCaseStudies | 0 | 0 | 0 | 13 | 13 |
+| Security | 1 | 0 | 1 | 10 | 9 |
+| Observability | 0 | 0 | 0 | 7 | 7 |
+| Cloud | 0 | 0 | 0 | 8 | 8 |
+| Testing | 0 | 0 | 0 | 7 | 7 |
+| MessagingQ | 1 | 0 | 1 | 6 | 5 |
+| KeyConcepts | 5 | 0 | 5 | 10 | 5 |
+| Database | 9 | 0 | 9 | 15 | 6 |
+| Microservices | 10 | 0 | 10 | 16 | 6 |
+| InterviewPrep | 0 | 0 | 0 | 8 | 8 |
+| Performance | 0 | 0 | 0 | 5 | 5 |
+| Navigation (INDEX, ROADMAPS) | 0 | +2 | **2** | 3 | 1 |
+| **TOTAL** | **28** | **+8** | **36** | **~120** | **~84** |
+
+> 🎯 **Phase 1 Progress**: 8/9 tasks complete (~89%). INDEX.md, ROADMAPS.md, and 6 BuildingBlocks files delivered. Remaining: README standardization.
+
+---
+
+## 📈 Live Progress Log
+
+| Date | Action | Files Created/Updated |
+|---|---|---|
+| May 2026 | Phase 1 start — Navigation | `INDEX.md`, `ROADMAPS.md` |
+| May 2026 | BuildingBlocks critical gap | `LoadBalancing.md`, `CDN.md`, `RateLimiting.md`, `APIGateway.md` |
+| May 2026 | BuildingBlocks resilience | `ServiceDiscovery.md`, `CircuitBreaker.md` |
+| — | Phase 2 start (next) | `SystemDesignCaseStudies/`, Security expansion, Observability |
 
 ---
 
@@ -964,4 +979,4 @@ Before publishing any article, verify all items:
 
 ---
 
-*Last Updated: May 2026 | Version 1.0 | [Back to Index](./INDEX.md)*
+*Last Updated: May 2026 | Version 1.1 | Phase 1: ✅ 89% complete | [Back to Index](./INDEX.md)*
