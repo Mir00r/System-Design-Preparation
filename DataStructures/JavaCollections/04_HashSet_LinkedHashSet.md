@@ -133,12 +133,12 @@ MEMORY LAYOUT:
 │  HashSet { "Alice", "Bob", "Charlie" }                           │
 │                                                                  │
 │  map → HashMap {                                                 │
-│    "Alice"   → PRESENT (dummy Object @0x1234)                   │
-│    "Bob"     → PRESENT (same dummy Object @0x1234)              │
-│    "Charlie" → PRESENT (same dummy Object @0x1234)              │
+│    "Alice"   → PRESENT (dummy Object @0x1234)                    │
+│    "Bob"     → PRESENT (same dummy Object @0x1234)               │
+│    "Charlie" → PRESENT (same dummy Object @0x1234)               │
 │  }                                                               │
 │                                                                  │
-│  NOTE: All values point to the SAME PRESENT object!             │
+│  NOTE: All values point to the SAME PRESENT object!              │
 │        Memory-efficient design.                                  │
 └──────────────────────────────────────────────────────────────────┘
 ```

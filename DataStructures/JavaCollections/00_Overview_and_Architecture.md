@@ -70,22 +70,22 @@ These existed BEFORE the Collections Framework and are largely obsolete today:
 ```
 LEGACY CLASSES (Java 1.0 / 1.1):
 ┌─────────────────────────────────────────────────────────────────┐
-│  Class         │ Problem              │ Modern Replacement       │
+│  Class         │ Problem              │ Modern Replacement      │
 ├─────────────────────────────────────────────────────────────────┤
-│  Vector        │ All methods synchronized → SLOW               │
+│  Vector        │ All methods synchronized → SLOW                │
 │                │ (even single-threaded)    → ArrayList          │
 ├─────────────────────────────────────────────────────────────────┤
-│  Hashtable     │ All methods synchronized → SLOW               │
+│  Hashtable     │ All methods synchronized → SLOW                │
 │                │ Doesn't allow null keys   → HashMap            │
 ├─────────────────────────────────────────────────────────────────┤
-│  Stack         │ Extends Vector (wrong!)   │ ArrayDeque          │
+│  Stack         │ Extends Vector (wrong!)   │ ArrayDeque         │
 │                │ Has useless methods       │                    │
 ├─────────────────────────────────────────────────────────────────┤
-│  Properties    │ Extends Hashtable (wrong) │ Still used for      │
-│                │                           │ config files        │
+│  Properties    │ Extends Hashtable (wrong) │ Still used for     │
+│                │                           │ config files       │
 ├─────────────────────────────────────────────────────────────────┤
-│  BitSet        │ Not truly collection      │ Still used for      │
-│                │                           │ bitmask operations  │
+│  BitSet        │ Not truly collection      │ Still used for     │
+│                │                           │ bitmask operations │
 └─────────────────────────────────────────────────────────────────┘
 ```
 
@@ -177,9 +177,9 @@ AFTER Java 21 — uniform interface:
                     │              Collection<E>                   │
                     │  add, remove, contains, size, isEmpty,       │
                     │  iterator, toArray, forEach, stream          │
-                    └───────────┬──────────────┬────────────────────┘
+                    └───────────┬──────────────┬───────────────────┘
                                 │              │
-              ┌─────────────────▼──┐  ┌────────▼──────────┐  ┌──────────────────┐
+              ┌─────────────────▼──┐   ┌────────▼──────────┐   ┌──────────────────┐
               │      List<E>        │  │      Set<E>        │  │     Queue<E>     │
               │  Ordered, allows    │  │  No duplicates     │  │  FIFO ordering   │
               │  duplicates, index  │  │  at most one null  │  │  offer, poll,    │
@@ -199,7 +199,7 @@ Map Hierarchy (separate — Map does NOT extend Collection):
                     │                  Map<K,V>                    │
                     │  put, get, remove, containsKey, containsValue│
                     │  keySet, values, entrySet, forEach, compute  │
-                    └───────────┬──────────────┬────────────────────┘
+                    └───────────┬──────────────┬───────────────────┘
                                 │              │
               ┌─────────────────▼──┐  ┌────────▼──────────┐
               │    SortedMap<K,V>  │  │  HashMap<K,V>      │

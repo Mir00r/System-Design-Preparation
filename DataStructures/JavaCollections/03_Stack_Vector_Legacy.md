@@ -171,13 +171,13 @@ The DESIGN MISTAKE:
 │  Stack<E> extends Vector<E>                                        │
 │                                                                    │
 │  Stack inherits ALL Vector methods including:                      │
-│    add(index, element) — WRONG for a stack!                       │
-│    get(index)          — WRONG for a stack!                       │
-│    remove(index)       — WRONG for a stack!                       │
-│    set(index, element) — WRONG for a stack!                       │
+│    add(index, element) — WRONG for a stack!                        │
+│    get(index)          — WRONG for a stack!                        │
+│    remove(index)       — WRONG for a stack!                        │
+│    set(index, element) — WRONG for a stack!                        │
 │                                                                    │
-│  A REAL stack should ONLY allow: push, pop, peek, isEmpty, size   │
-│  Stack breaks the Liskov Substitution Principle!                  │
+│  A REAL stack should ONLY allow: push, pop, peek, isEmpty, size    │
+│  Stack breaks the Liskov Substitution Principle!                   │
 └────────────────────────────────────────────────────────────────────┘
 ```
 

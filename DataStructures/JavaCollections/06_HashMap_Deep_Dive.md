@@ -113,14 +113,14 @@ table[] (length = 16):
 ┌────────────────────────────────────────────────────────────────────────┐
 │ [0]  null                                                              │
 │ [1]  null                                                              │
-│ [2]  Node{hash=2, key="Bob",     value=200, next=Node{key="Eve"}}     │
-│      └─→   Node{hash=2, key="Eve",     value=300, next=null}          │
-│      (collision! Bob and Eve hash to same bucket)                     │
+│ [2]  Node{hash=2, key="Bob",     value=200, next=Node{key="Eve"}}      │
+│      └─→   Node{hash=2, key="Eve",     value=300, next=null}           │
+│      (collision! Bob and Eve hash to same bucket)                      │
 │ [3]  null                                                              │
-│ [4]  Node{hash=4, key="Alice",   value=100, next=null}                │
+│ [4]  Node{hash=4, key="Alice",   value=100, next=null}                 │
 │ [5]  null                                                              │
 │ ...                                                                    │
-│ [7]  Node{hash=7, key="Charlie", value=400, next=null}                │
+│ [7]  Node{hash=7, key="Charlie", value=400, next=null}                 │
 │ ...                                                                    │
 │[15]  null                                                              │
 └────────────────────────────────────────────────────────────────────────┘
