@@ -1,10 +1,12 @@
-# **Java Stream API – The Ultimate Interview Guide** 🚀
+# ☕ Java Stream API: The Ultimate Interview Guide 🚀
+
+**⏱️ Estimated Time**: 45 minutes | **🎯 Difficulty**: 🟡 Intermediate | **🔗 Prerequisites**: [Lambda Expressions](./LambdaExpressions.md) | [Functional Interfaces](./FunctionalInterface.md)
 
 This comprehensive guide covers everything you need to know about Java Stream API for technical interviews, including functional programming concepts, performance considerations, and real-world industry applications.
 
 ---
 
-## **Table of Contents** 📑
+## 📋 Table of Contents
 1. [What are Java Streams?](#1-what-are-java-streams)
 2. [Stream Pipeline Anatomy](#2-stream-pipeline-anatomy)
 3. [Intermediate Operations](#3-intermediate-operations)
@@ -1509,3 +1511,7 @@ These patterns are used by major tech companies:
 - **Spotify** for playlist recommendation engines
 - **LinkedIn** for connection graph analysis
 - **Banks** for real-time fraud detection
+
+---
+
+*Previous: [← Functional Interfaces](./FunctionalInterface.md) | Next: [Stream vs ParallelStream →](./Stream_VS_ParallelStream.md)*

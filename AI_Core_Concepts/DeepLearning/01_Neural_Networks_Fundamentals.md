@@ -433,3 +433,7 @@ For comparison:
 ---
 
 *"Neural networks are just fancy curve-fitting with extra steps and a GPU."* — Honest ML Engineer 😄
+
+---
+
+*Previous: [← Model Evaluation](../MachineLearning/04_Model_Evaluation.md) | Next: [Backpropagation Gradient Descent →](02_Backpropagation_Gradient_Descent.md)*

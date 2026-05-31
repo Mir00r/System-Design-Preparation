@@ -239,3 +239,7 @@ Thread-2: (Steals A2) → Processes it
 - **Java Streams** (`parallelStream()` uses `ForkJoinPool`).
 - **JMH** → Benchmark parallel performance.
 - **Project Loom** → Future of lightweight threads.
+
+---
+
+*Previous: [← ExecutorService](./ExecutorService.md) | Next: [ScheduledExecutorService →](./ScheduledExecutorService.md)*

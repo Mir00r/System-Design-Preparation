@@ -415,3 +415,7 @@ Time to put everything together! The next chapter is pure practice — 50+ quest
 ---
 
 *Chapter 10 Complete! 🎉 You've earned +10 XP and the 👑 Legend Status!*
+
+---
+
+*Previous: [← Ownership And Accountability](./09_Ownership_And_Accountability.md) | Next: [Practice Exercises And Gamification →](./11_Practice_Exercises_And_Gamification.md)*

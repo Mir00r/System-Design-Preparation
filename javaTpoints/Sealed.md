@@ -1,4 +1,6 @@
-# **Java `sealed` Keyword: Ultimate Guide for Interview Preparation** 🚀
+# ☕ Java `sealed` Keyword: Ultimate Guide for Interview Preparation 🚀
+
+**⏱️ Estimated Time**: 20 minutes | **🎯 Difficulty**: 🟡 Intermediate | **🔗 Prerequisites**: [Record Keyword](./Record.md) | [Java Versions](./JavaDifferentVersionInfo.md)
 
 The **`sealed`** keyword, introduced in **Java 15** (JEP 360) and finalized in **Java 17**, is a powerful feature that allows developers to **restrict inheritance** in a controlled manner. It enhances **type safety**, **domain modeling**, and **pattern matching** in modern Java applications.
 
@@ -208,3 +210,7 @@ The `sealed` keyword is a **game-changer** for **type-safe hierarchies** in Java
 
 🔗 **Happy Learning!** 🎉  
 📢 **Share this guide with your peers!** 💬
+
+---
+
+*Previous: [← Record Keyword](./Record.md) | Next: [Marker Interfaces →](./MarkerInterface.md)*

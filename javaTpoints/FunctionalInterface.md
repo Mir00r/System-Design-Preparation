@@ -1,4 +1,6 @@
-# **Functional Interfaces in Java: Predicate, Function, Consumer, and Supplier** 🚀
+# ☕ Functional Interfaces in Java: Predicate, Function, Consumer, and Supplier 🚀
+
+**⏱️ Estimated Time**: 30 minutes | **🎯 Difficulty**: 🟡 Intermediate | **🔗 Prerequisites**: [Lambda Expressions](./LambdaExpressions.md)
 
 This comprehensive guide covers Java's core functional interfaces with practical examples, industry use cases, and interview-focused explanations.
 
@@ -594,5 +596,9 @@ These patterns are used extensively in:
 - **Reactive Programming** (Project Reactor)
 - **Testing Libraries** (JUnit, Mockito)
 - **Cloud-Native Applications** (AWS Lambda, Azure Functions)
+
+---
+
+*Previous: [← Lambda Expressions](./LambdaExpressions.md) | Next: [Stream API →](./StreamApi.md)*
 
 Would you like me to dive deeper into any specific application area?

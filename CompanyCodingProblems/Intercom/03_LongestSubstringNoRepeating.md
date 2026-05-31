@@ -328,3 +328,7 @@ for right, char in enumerate(s):
 | [LeetCode 340](https://leetcode.com/problems/longest-substring-with-at-most-k-distinct-characters/) | At Most K Distinct | Generalization of this problem |
 | [LeetCode 76](https://leetcode.com/problems/minimum-window-substring/) | Minimum Window Substring | Sliding window with frequency map |
 | [LeetCode 567](https://leetcode.com/problems/permutation-in-string/) | Permutation in String | Fixed-size sliding window |
+
+---
+
+*Previous: [← 02 TweetCountsPerFrequency](./02_TweetCountsPerFrequency.md) | Next: [04 UserPingTracker →](./04_UserPingTracker.md)*

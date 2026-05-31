@@ -204,3 +204,7 @@ ThreadPools are **essential for scalable Java applications**. Mastering them ens
 - **Java Concurrency API** (`ExecutorService`, `ForkJoinPool`)
 - **Monitoring:** Micrometer, Prometheus
 - **Alternatives:** Kotlin Coroutines, Project Loom (Virtual Threads)
+
+---
+
+*Previous: [← Threading Journey](./Journey.md) | Next: [ThreadPoolExecutor →](./ThreadPoolExecutor.md)*

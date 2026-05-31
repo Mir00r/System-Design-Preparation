@@ -243,3 +243,7 @@ This tests:
 | [LC 358 - Rearrange String k Distance Apart](https://leetcode.com/problems/rearrange-string-k-distance-apart/) | Same cooldown concept with characters |
 | [LC 767 - Reorganize String](https://leetcode.com/problems/reorganize-string/) | Greedy + heap, no adjacent duplicates |
 | [Intercom P01](./01_FairConversationAssignment.md) | Same scheduling concept applied to agents |
+
+---
+
+*Previous: [← 06 ChatSystemLowLevelDesign](./06_ChatSystemLowLevelDesign.md) | Next: [08 RateLimiter →](./08_RateLimiter.md)*

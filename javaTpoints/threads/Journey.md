@@ -397,3 +397,6 @@ try {
 - Scoped Values (Java 22).
 
 🔹 **Now you understand Java’s threading journey!** 🎉
+---
+
+*Previous: [← Platform/OS/Kernel Threads](./Platform_Or_OS_Or_Kernel.md) | Next: [Thread Pools →](./ThreadPools.md)*

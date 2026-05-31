@@ -460,3 +460,7 @@ Next, we explore how to talk about failures, learning, and adaptability — the 
 ---
 
 *Chapter 6 Complete! 🎉 You've earned +10 XP and the 🏛️ Architect Badge!*
+
+---
+
+*Previous: [← Communication And Collaboration](./05_Communication_And_Collaboration.md) | Next: [Growth Mindset And Adaptability →](./07_Growth_Mindset_And_Adaptability.md)*

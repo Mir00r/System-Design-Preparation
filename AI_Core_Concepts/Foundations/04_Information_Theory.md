@@ -488,3 +488,7 @@ Now you're ready for the good stuff — actual Machine Learning algorithms!
 ---
 
 *"Entropy is just a fancy word for 'I don't know what's coming next'. Which is also my life motto."* 😄
+
+---
+
+*Previous: [← Calculus Optimization](03_Calculus_Optimization.md) | Next: [What Is ML →](../MachineLearning/01_What_Is_ML.md)*

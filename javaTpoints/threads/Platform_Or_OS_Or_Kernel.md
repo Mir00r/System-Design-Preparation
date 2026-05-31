@@ -269,3 +269,7 @@ Thread-2: Holds Lock B, wants Lock A
 - **Project Loom** → For virtual threads.
 - **JMX** → Monitor thread states.
 - **Java Concurrency in Practice** → Must-read book.
+
+---
+
+*Previous: [← Java Thread Part 2](./JavaThreadpart2.md) | Next: [Threading Journey →](./Journey.md)*

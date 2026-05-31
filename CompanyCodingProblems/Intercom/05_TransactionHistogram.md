@@ -446,3 +446,7 @@ def transaction_histogram_debug(logs, start_time, end_time, bucket_size):
 | [Intercom P04](./04_UserPingTracker.md) | User Ping Tracker | Same bucketing — per-user keyed |
 | [LeetCode 1348](https://leetcode.com/problems/tweet-counts-per-frequency/) | Tweet Counts | LeetCode version of this pattern |
 | [LeetCode 220](https://leetcode.com/problems/contains-duplicate-iii/) | Contains Duplicate III | Bucket sort / time window concept |
+
+---
+
+*Previous: [← 04 UserPingTracker](./04_UserPingTracker.md) | Next: [06 ChatSystemLowLevelDesign →](./06_ChatSystemLowLevelDesign.md)*

@@ -1,4 +1,8 @@
-Sure! Let’s break down **Error vs Exception** very clearly, deeply, and practically — so you can confidently answer in interviews. ✅
+# ☕ Java Error vs Exception: The Complete Interview Guide 🚀
+
+**⏱️ Estimated Time**: 15 minutes | **🎯 Difficulty**: 🟢 Beginner | **🔗 Prerequisites**: [java.lang.Object](./JavaLangObject.md)
+
+Let's break down **Error vs Exception** very clearly, deeply, and practically — so you can confidently answer in interviews. ✅
 
 ---
 
@@ -112,3 +116,7 @@ public class ErrorExample {
 | Example        | File not found | Out of memory |
 | Caused by      | Application bugs | System crash / JVM issues |
 | Recovery       | Possible | Rare |
+
+---
+
+*Previous: [← java.lang.Object](./JavaLangObject.md) | Next: [Exceptions →](./Exception.md)*

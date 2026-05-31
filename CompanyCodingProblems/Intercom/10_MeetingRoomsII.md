@@ -287,3 +287,7 @@ This is literally the **same problem as Intercom's load balancer** but framed di
 | [LC 56 - Merge Intervals](https://leetcode.com/problems/merge-intervals/) | Interval manipulation |
 | [LC 1094 - Car Pooling](https://leetcode.com/problems/car-pooling/) | Sweep line with capacity |
 | [Intercom P01](./01_FairConversationAssignment.md) | Same capacity/scheduling domain |
+
+---
+
+*Previous: [← 09 LRUCache](./09_LRUCache.md) | Next: [11 DesignLeaderboard →](./11_DesignLeaderboard.md)*

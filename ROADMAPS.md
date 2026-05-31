@@ -15,6 +15,8 @@
 7. [Domain-First Tracks](#-domain-first-tracks)
 8. [Quick Reference: Topic by Interview Round](#-quick-reference-topic-by-interview-round)
 
+> **New sections added**: Tradeoffs Mastery, AI/ML for Engineers, Company Interview Prep tracks — see [Domain-First Tracks](#-domain-first-tracks)
+
 ---
 
 ## 🧭 How to Use These Roadmaps
@@ -259,6 +261,45 @@ Day 5: Databases (RDS, DynamoDB, ElastiCache)
 Day 6: DevOps (CodePipeline, ECS, EKS)
 Day 7: Security (IAM, KMS, CloudTrail) + review
 ```
+
+### ⚖️ Tradeoffs Mastery in 1 Week
+```
+Day 1: Consistency vs Availability (CAP theorem applied)
+Day 2: SQL vs NoSQL — when to pick each
+Day 3: Sync vs Async — REST, queues, events
+Day 4: Monolith vs Microservices — the real tradeoffs
+Day 5: Latency vs Throughput — caching, batching, CDN
+Day 6: Strong vs Eventual Consistency — read your Tradeoffs/ folder
+Day 7: Practice — explain 3 real systems and their tradeoff choices
+```
+**Files**: [Tradeoffs/](./Tradeoffs/)
+
+### 🤖 AI/ML for Engineers in 2 Weeks
+```
+Week 1: Foundations → ML fundamentals → Deep Learning basics
+  Day 1-2: AI_Core_Concepts/Foundations/ (linear algebra, probability)
+  Day 3-4: AI_Core_Concepts/MachineLearning/ (what is ML, supervised, unsupervised)
+  Day 5-7: AI_Core_Concepts/DeepLearning/ (neural nets, backprop, transformers)
+
+Week 2: Practical AI Engineering
+  Day 8-9:  AI_Core_Concepts/NLP_LLMs/ (embeddings, LLMs, prompt engineering)
+  Day 10-11: AI_Core_Concepts/AI_Design_Patterns/ (RAG, agents, chain-of-thought)
+  Day 12-13: AI_Core_Concepts/AI_System_Design/ (ML pipelines)
+  Day 14:   AI_Core_Concepts/AI_Java_Developers/ (Java AI ecosystem)
+```
+**Files**: [AI_Core_Concepts/README.md](./AI_Core_Concepts/README.md)
+
+### 🏢 Company Interview Prep in 1 Week (Intercom example)
+```
+Day 1: 00_InterviewPrepGuide — understand format, read company research
+Day 2: Solve problems 01-05 (coding: assignments, frequency, sliding window)
+Day 3: Solve problems 06-09 (LLD: chat system, rate limiter, LRU cache)
+Day 4: Solve problems 10-12 (system design: leaderboard, scheduling)
+Day 5: 13_MinicomRoundPrep + 14_ValuesRound_BehavioralPrep
+Day 6: 15_SystemDesign_DataModelling + 16_AdditionalCodingProblems
+Day 7: 17_InterviewDay_CheatSheet + 18_CompanyKnowledge review
+```
+**Files**: [CompanyCodingProblems/Intercom/](./CompanyCodingProblems/Intercom/)
 
 ---
 

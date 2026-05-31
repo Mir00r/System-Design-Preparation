@@ -1,4 +1,6 @@
-# **📝 Java Marker Interfaces: The Ultimate Guide for Interview Preparation**
+# ☕ Java Marker Interfaces: The Ultimate Guide for Interview Preparation 🚀
+
+**⏱️ Estimated Time**: 20 minutes | **🎯 Difficulty**: 🟡 Intermediate | **🔗 Prerequisites**: [Java Collections](./JavaCollections.md)
 
 🚀 **Marker interfaces are a powerful yet often misunderstood feature in Java.** This guide covers **everything** from basic concepts to **real-world applications**, helping you **ace interviews** and write **better Java code**.
 
@@ -210,3 +212,7 @@ class Product implements Cloneable {
 📢 **Found this helpful? Like & Share!** 💬 **Comment your interview experiences!**
 
 #Java #MarkerInterfaces #InterviewPrep #Serializable #Cloneable
+
+---
+
+*Previous: [← Sealed Keyword](./Sealed.md) | Next: [java.lang.Object →](./JavaLangObject.md)*

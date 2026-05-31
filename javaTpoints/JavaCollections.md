@@ -1,4 +1,6 @@
-## Ultimate Java Collections Guide for Interview Preparation 🚀
+## ☕ Ultimate Java Collections Guide for Interview Preparation 🚀
+
+**⏱️ Estimated Time**: 50 minutes | **🎯 Difficulty**: 🟡 Intermediate | **🔗 Prerequisites**: [Stream API](./StreamApi.md) | [Collections Deep Dive](../DataStructures/JavaCollections/00_Overview_and_Architecture.md)
 
 Understanding Java Collections is vital for acing Java interviews, especially when targeting roles in top tech companies. This guide covers everything from basics to advanced techniques, supported with code, diagrams, and real-world insights.
 
@@ -1110,3 +1112,7 @@ Each of these interfaces has multiple implementations (e.g., `ArrayList`, `HashS
 - Always check documentation when null handling is important for your use case
 
 These questions dig into some of the more nuanced aspects of Java Collections that might come up in advanced technical interviews.
+
+---
+
+*Previous: [← Stream vs ParallelStream](./Stream_VS_ParallelStream.md) | Next: [Record Keyword →](./Record.md)*

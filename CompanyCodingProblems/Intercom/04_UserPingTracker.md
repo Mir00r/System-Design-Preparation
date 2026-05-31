@@ -460,3 +460,7 @@ def get_pings(self, user_id, start_time, end_time, partition):
 | [LeetCode 981](https://leetcode.com/problems/time-based-key-value-store/) | Time-Based Key-Value Store | userId + timestamp + binary search |
 | [Intercom P02](./02_TweetCountsPerFrequency.md) | Tweet Counts Per Frequency | Same bucketing pattern, fixed frequencies |
 | [Intercom P05](./05_TransactionHistogram.md) | Transaction Histogram | Same concept as a one-shot function |
+
+---
+
+*Previous: [← 03 LongestSubstringNoRepeating](./03_LongestSubstringNoRepeating.md) | Next: [05 TransactionHistogram →](./05_TransactionHistogram.md)*

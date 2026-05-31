@@ -607,3 +607,7 @@ F) "What changed in v3.2 of our API?" → YES RAG! ✅ (specific docs)
 ---
 
 *"RAG is like giving GPT a open-book exam instead of expecting it to memorize the entire textbook. Turns out, open-book is a LOT more reliable!"* 📖🤖
+
+---
+
+*Previous: [← Fine Tuning Alignment](../NLP_LLMs/07_Fine_Tuning_Alignment.md) | Next: [Agent Pattern →](03_Agent_Pattern.md)*

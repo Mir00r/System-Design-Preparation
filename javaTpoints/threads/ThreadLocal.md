@@ -196,3 +196,7 @@ Understanding ThreadLocal helps in **designing scalable, thread-safe application
 - **Logback MDC** (Logging context)
 
 Would you like a deeper dive into any specific aspect? 🚀
+
+---
+
+*Previous: [← ScheduledExecutorService](./ScheduledExecutorService.md) | Next: [Virtual Threads (Loom) →](./VirtualThreads(Project Loom).md)*

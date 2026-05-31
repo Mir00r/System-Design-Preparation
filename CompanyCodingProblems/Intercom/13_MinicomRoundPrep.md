@@ -791,3 +791,7 @@ async function apiPost<T>(path: string, body: any): Promise<T> {
 4. Make the UI auto-refresh every 3 seconds (polling)
 
 **If you can do this in 45 min, you'll ace the Minicom round.**
+
+---
+
+*Previous: [← 12 SkillBasedRouting](./12_SkillBasedRouting.md) | Next: [14 ValuesRound BehavioralPrep →](./14_ValuesRound_BehavioralPrep.md)*

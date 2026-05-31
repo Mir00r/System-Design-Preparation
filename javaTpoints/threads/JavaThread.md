@@ -156,4 +156,6 @@ ThreadLocal<Integer> threadId = ThreadLocal.withInitial(() -> 1);
 - Be familiar with common pitfalls and how to debug them.
 
 Master these concepts, and you’ll confidently breeze through any Java multithreading round! 💪
+---
 
+*Previous: [← Throwable](../Throwable.md) | Next: [Java Thread Part 2 →](./JavaThreadpart2.md)*

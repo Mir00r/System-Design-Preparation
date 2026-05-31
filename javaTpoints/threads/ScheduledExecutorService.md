@@ -204,3 +204,7 @@ executor.schedule(() -> {
 👉 **Follow** for more Java deep-dives! 🚀
 
 #Java #Concurrency #Scheduling #InterviewPrep #TechBlog
+
+---
+
+*Previous: [← ForkJoinPool](./ForkJoinPool.md) | Next: [ThreadLocal →](./ThreadLocal.md)*

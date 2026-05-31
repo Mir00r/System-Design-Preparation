@@ -487,3 +487,7 @@ public class LongestConsecutive {
 | Fri | Min Stack | Auxiliary structure |
 | Sat | Longest Consecutive | Set-based O(n) thinking |
 | Sun | Mock interview — pick random problem | Timed, explain aloud |
+
+---
+
+*Previous: [← 15 SystemDesign DataModelling](./15_SystemDesign_DataModelling.md) | Next: [17 InterviewDay CheatSheet →](./17_InterviewDay_CheatSheet.md)*

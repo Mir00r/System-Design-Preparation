@@ -595,3 +595,7 @@ CREATE TABLE escalation_rules (
 
 **Answer:**
 > "Phase 1: Add `shard_key` column (conversation_id % shard_count). Phase 2: Route new reads/writes by shard key. Phase 3: Background migration of old data. Phase 4: Remove routing to old single table. Use conversation_id as shard key because all queries for messages are within a single conversation."
+
+---
+
+*Previous: [← 14 ValuesRound BehavioralPrep](./14_ValuesRound_BehavioralPrep.md) | Next: [16 AdditionalCodingProblems →](./16_AdditionalCodingProblems.md)*

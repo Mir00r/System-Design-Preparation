@@ -139,3 +139,7 @@ Used in frameworks like Spring (for `RequestContextHolder`) and Hibernate (for s
 
 Mastering these tools shows you can write concurrent Java applications like a pro! 💪
 
+---
+
+*Previous: [← Java Thread](./JavaThread.md) | Next: [Platform/OS/Kernel Threads →](./Platform_Or_OS_Or_Kernel.md)*
+

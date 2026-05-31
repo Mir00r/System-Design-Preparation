@@ -571,3 +571,7 @@ F) "Book me the cheapest flight to Tokyo next week"
 ---
 
 *"An AI agent is like giving an intern access to Google, a calculator, and your company database, and saying 'Figure it out.' Sometimes brilliant. Sometimes... chaotic."* 🤖😅
+
+---
+
+*Previous: [← RAG Pattern](02_RAG_Pattern.md) | Next: [Chain of Thought →](04_Chain_of_Thought.md)*

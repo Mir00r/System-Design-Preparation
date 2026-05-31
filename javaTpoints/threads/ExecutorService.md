@@ -216,3 +216,7 @@ Mastering `ExecutorService` is **essential** for Java interviews and **high-perf
 👉 **Share** with fellow developers!  
 👉 **Comment** your interview experiences!  
 👉 **Follow** for more in-depth Java guides! 🚀
+
+---
+
+*Previous: [← ThreadPoolExecutor](./ThreadPoolExecutor.md) | Next: [ForkJoinPool →](./ForkJoinPool.md)*

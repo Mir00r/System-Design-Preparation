@@ -321,3 +321,7 @@ lb.top(3)            → 107 + 51 + 39 = 197
 | [LC 347 - Top K Frequent Elements](https://leetcode.com/problems/top-k-frequent-elements/) | Frequency + top-K |
 | [LC 355 - Design Twitter](https://leetcode.com/problems/design-twitter/) | Multi-method class design |
 | [Intercom P05](./05_TransactionHistogram.md) | Frequency counting & ranking |
+
+---
+
+*Previous: [← 10 MeetingRoomsII](./10_MeetingRoomsII.md) | Next: [12 SkillBasedRouting →](./12_SkillBasedRouting.md)*

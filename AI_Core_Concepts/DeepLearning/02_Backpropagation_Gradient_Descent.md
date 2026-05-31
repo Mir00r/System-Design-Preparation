@@ -647,3 +647,7 @@ Answer:
 ---
 
 *"Backpropagation is just the chain rule from calculus... applied a billion times per second on a $10,000 GPU. That's what a $100B industry is built on."* 🧮🔥
+
+---
+
+*Previous: [← Neural Networks Fundamentals](01_Neural_Networks_Fundamentals.md) | Next: [CNNs →](03_CNNs.md)*

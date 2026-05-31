@@ -482,3 +482,7 @@ Match the problem to the best algorithm:
 ---
 
 *"I trained a linear regression to predict my productivity. It said it's inversely proportional to how many YouTube tabs I have open."* 📉😅
+
+---
+
+*Previous: [← What Is ML](01_What_Is_ML.md) | Next: [Unsupervised Learning →](03_Unsupervised_Learning.md)*

@@ -676,3 +676,7 @@ Too low → bad responses → angry customers → $$$ lost! 💸
 ---
 
 *"The hardest part of ML isn't building the model. It's keeping it working 6 months later when the data has changed, the team has changed, and nobody remembers why that one feature is log-transformed."* 🏗️😅
+
+---
+
+*Previous: [← Chain of Thought](../AI_Design_Patterns/04_Chain_of_Thought.md) | Next: [Java AI Ecosystem →](../AI_Java_Developers/01_Java_AI_Ecosystem.md)*

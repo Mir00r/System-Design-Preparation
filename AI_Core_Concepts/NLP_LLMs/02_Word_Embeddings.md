@@ -590,3 +590,7 @@ And: sim("Python", "guitar") ≈ ???
 ---
 
 *"Before embeddings, computers understood words about as well as a cat understands algebra. After embeddings, they understand meaning better than most humans understand their own language!"* 📐🧠😄
+
+---
+
+*Previous: [← Transformers Attention](../DeepLearning/05_Transformers_Attention.md) | Next: [Large Language Models →](04_Large_Language_Models.md)*

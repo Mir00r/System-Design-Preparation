@@ -615,3 +615,7 @@ Master these 5 → You're better than 90% of AI engineers! 🏆
 ---
 
 *"Prompt engineering is 50% communication skills, 30% domain knowledge, and 20% knowing the model's quirks. It's the most valuable skill nobody teaches in school."* 🎯😎
+
+---
+
+*Previous: [← Large Language Models](04_Large_Language_Models.md) | Next: [Fine Tuning Alignment →](07_Fine_Tuning_Alignment.md)*

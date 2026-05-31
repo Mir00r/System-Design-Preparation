@@ -573,3 +573,7 @@ You now understand HOW AI learns! Next: the theory of information itself — cru
 ---
 
 *"I once explained backpropagation to my grandma. She said: 'So it's just blaming each step for the mistake?' YES GRANDMA. EXACTLY."* 😄
+
+---
+
+*Previous: [← Probability Statistics](02_Probability_Statistics.md) | Next: [Information Theory →](04_Information_Theory.md)*

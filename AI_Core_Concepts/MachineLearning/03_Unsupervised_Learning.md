@@ -520,3 +520,7 @@ The ALGORITHM found these groups. YOU give them meaning! 🎯
 ---
 
 *"Unsupervised learning is like being a new student at school lunch. Nobody tells you the groups — you just figure out who the athletes, gamers, and theater kids are by observation!"* 🎭😄
+
+---
+
+*Previous: [← Supervised Learning](02_Supervised_Learning.md) | Next: [Model Evaluation →](04_Model_Evaluation.md)*

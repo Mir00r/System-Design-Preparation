@@ -378,3 +378,7 @@ Next, we tackle the practical side: how engineers handle competing priorities, t
 ---
 
 *Chapter 7 Complete! 🎉 You've earned +10 XP and the 🌱 Growth Badge!*
+
+---
+
+*Previous: [← Problem Solving And Decision Making](./06_Problem_Solving_And_Decision_Making.md) | Next: [Time Management And Prioritization →](./08_Time_Management_And_Prioritization.md)*

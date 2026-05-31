@@ -230,3 +230,7 @@ Mastering `ThreadPoolExecutor` is **critical** for building **scalable, resilien
 👉 **Follow** for more Java deep-dives! 🚀
 
 #Java #Concurrency #ThreadPoolExecutor #InterviewPrep #TechBlog
+
+---
+
+*Previous: [← Thread Pools](./ThreadPools.md) | Next: [ExecutorService →](./ExecutorService.md)*

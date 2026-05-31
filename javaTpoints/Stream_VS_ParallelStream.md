@@ -1,8 +1,10 @@
-# 🚀 **Stream vs ParallelStream: The Ultimate Comparison**
+# ☕ Stream vs ParallelStream: The Ultimate Comparison 🚀
+
+**⏱️ Estimated Time**: 20 minutes | **🎯 Difficulty**: 🟡 Intermediate | **🔗 Prerequisites**: [Stream API](./StreamApi.md)
 
 Understanding the differences between sequential and parallel streams is crucial for writing efficient Java applications. Let's break down these two approaches with practical insights.
 
-## **🔍 Core Differences**
+## 🔍 Core Differences
 
 | Feature                | `stream()`                     | `parallelStream()`             |
 |------------------------|--------------------------------|--------------------------------|
@@ -188,3 +190,7 @@ graph TD
 4. **Modern CPUs love parallelism** - when used properly
 
 **Remember:** Parallelism is a powerful tool, but like any optimization, it should be applied judiciously after proper measurement.
+
+---
+
+*Previous: [← Stream API](./StreamApi.md) | Next: [Java Collections →](./JavaCollections.md)*

@@ -310,3 +310,7 @@ Each tutorial contains:
 👉 [Start Module 1: Foundations →](./Foundations/01_Linear_Algebra.md)
 
 👉 [Skip to Module 2: ML Core (if you know the math) →](./MachineLearning/01_What_Is_ML.md)
+
+---
+
+*Previous: [← README](README.md) | Next: [Linear Algebra →](Foundations/01_Linear_Algebra.md)*

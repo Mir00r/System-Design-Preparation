@@ -282,3 +282,7 @@ You've completed the **Engineering Behavioral Interview Mastery** tutorial serie
 ---
 
 *Series Complete! 🎉 Return to [README](./README.md) for the full series overview.*
+
+---
+
+*Previous: [← Practice Exercises And Gamification](./11_Practice_Exercises_And_Gamification.md) | Next: [README →](./README.md)*

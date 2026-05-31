@@ -557,3 +557,7 @@ Temperature = 2.0: Almost uniform (wild, creative, potentially nonsensical)
 ---
 
 *"LLMs are like that friend who read every Wikipedia article and can confidently tell you about anything... but occasionally makes things up with a straight face."* 😄📚
+
+---
+
+*Previous: [← Word Embeddings](02_Word_Embeddings.md) | Next: [Prompt Engineering →](05_Prompt_Engineering.md)*

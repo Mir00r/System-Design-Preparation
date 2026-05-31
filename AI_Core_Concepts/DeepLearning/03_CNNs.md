@@ -452,3 +452,7 @@ Ophthalmology: Detect diabetic retinopathy from retina images
 ---
 
 *"A CNN is like a detective examining a crime scene: first notices scratches (edges), then fingerprints (textures), then pieces together WHO did it (classification). Layer by layer, from details to big picture!"* 🕵️👁️😄
+
+---
+
+*Previous: [← Backpropagation Gradient Descent](02_Backpropagation_Gradient_Descent.md) | Next: [RNNs LSTMs →](04_RNNs_LSTMs.md)*

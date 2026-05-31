@@ -448,3 +448,7 @@ Next, we tackle the SCARY questions — disagreements, difficult teammates, and 
 ---
 
 *Chapter 3 Complete! 🎉 You've earned +10 XP and the 👑 Leader Badge!*
+
+---
+
+*Previous: [← STAR Method Mastery](./02_STAR_Method_Mastery.md) | Next: [Conflict Resolution And Teamwork →](./04_Conflict_Resolution_And_Teamwork.md)*

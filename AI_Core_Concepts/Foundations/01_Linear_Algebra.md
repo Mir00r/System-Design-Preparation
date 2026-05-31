@@ -487,3 +487,7 @@ Now you speak the language of AI. Next, let's learn about **uncertainty** — be
 ---
 
 *"I saw the Matrix... and it was just a 2D array with good marketing."* 😄
+
+---
+
+*Previous: [← README](../README.md) | Next: [Probability Statistics →](02_Probability_Statistics.md)*

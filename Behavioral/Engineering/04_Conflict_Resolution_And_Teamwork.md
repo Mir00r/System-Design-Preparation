@@ -413,3 +413,7 @@ Next, we explore how to demonstrate exceptional communication skills — from ex
 ---
 
 *Chapter 4 Complete! 🎉 You've earned +10 XP and the 🕊️ Peacemaker Badge!*
+
+---
+
+*Previous: [← Leadership And Influence](./03_Leadership_And_Influence.md) | Next: [Communication And Collaboration →](./05_Communication_And_Collaboration.md)*

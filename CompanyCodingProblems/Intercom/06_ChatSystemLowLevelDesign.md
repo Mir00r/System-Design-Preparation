@@ -479,3 +479,7 @@ attachments
 | Connection Pooling | [ConnectionPooling.md](../../Database/ConnectionPooling.md) |
 | System Design — WebSockets (for real-time) | [WebSockets.md](../../APIs/WebSockets.md) |
 | Caching (Redis for unread counts) | [Caching.md](../../BuildingBlocks/Caching.md) |
+
+---
+
+*Previous: [← 05 TransactionHistogram](./05_TransactionHistogram.md) | Next: [07 TaskScheduler →](./07_TaskScheduler.md)*

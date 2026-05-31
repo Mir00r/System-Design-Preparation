@@ -1,4 +1,6 @@
-# 💡 Mastering `java.lang.Object` in Java — The Root of All Classes
+# ☕ Mastering `java.lang.Object` in Java: The Root of All Classes 🚀
+
+**⏱️ Estimated Time**: 25 minutes | **🎯 Difficulty**: 🟡 Intermediate | **🔗 Prerequisites**: [Marker Interfaces](./MarkerInterface.md)
 
 When preparing for Java interviews, one of the most frequently overlooked yet fundamentally crucial topics is the `java.lang.Object` class. Understanding it in-depth not only helps in interviews but also enhances your understanding of Java’s object-oriented nature.
 
@@ -179,3 +181,7 @@ public class Employee {
 The `Object` class is the silent backbone of every Java application. Understanding its methods helps you write better, cleaner, and more robust Java code — and ace those tricky interview questions!
 
 If you're preparing for Java or system design interviews, mastering this topic is an absolute must.
+
+---
+
+*Previous: [← Marker Interfaces](./MarkerInterface.md) | Next: [Error vs Exception →](./Error_Vs_Exception.md)*

@@ -342,3 +342,7 @@ Customer Question → Fin Engine → LLM Routing Layer → Model Provider
 | "I work best alone" | "I'm productive independently but love pairing on complex problems" |
 | "That's not my responsibility" | "I'd flag it and either fix it myself or find the right person" |
 | "I prefer backend only" | "I enjoy full-stack work — shipping end-to-end features is satisfying" |
+
+---
+
+*Previous: [← 17 InterviewDay CheatSheet](./17_InterviewDay_CheatSheet.md) | Next: [README →](./README.md)*

@@ -547,3 +547,7 @@ Research/Hard problems: Tree-of-Thought (explore paths)
 ---
 
 *"Chain-of-Thought: because even AI works better when it shows its work. Your math teacher was right all along!"* 🧠📝😄
+
+---
+
+*Previous: [← Agent Pattern](03_Agent_Pattern.md) | Next: [ML Pipeline Architecture →](../AI_System_Design/01_ML_Pipeline_Architecture.md)*

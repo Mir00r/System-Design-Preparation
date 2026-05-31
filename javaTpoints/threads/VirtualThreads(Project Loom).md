@@ -580,3 +580,7 @@ try {
 - **Java 21+** → For production-ready Virtual Threads.
 - **JFR (Java Flight Recorder)** → Monitor VT performance.
 - **Structured Concurrency** → For error handling.
+
+---
+
+*Previous: [← ThreadLocal](./ThreadLocal.md) | Next: [Back to javaTpoints →](../JavaDifferentVersionInfo.md)*

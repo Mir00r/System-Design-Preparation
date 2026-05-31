@@ -1,4 +1,6 @@
-# **Java Static Keyword: Ultimate Guide for Interview Preparation** 🚀
+# ☕ Java Static Keyword: Ultimate Guide for Interview Preparation 🚀
+
+**⏱️ Estimated Time**: 20 minutes | **🎯 Difficulty**: 🟢 Beginner | **🔗 Prerequisites**: [Access Modifiers](./AccessModifiers.md)
 
 The **`static`** keyword in Java is a fundamental concept that every Java developer must understand thoroughly. It is widely used in industry applications, and interviewers frequently test candidates on their knowledge of `static` variables, methods, blocks, and nested classes.
 
@@ -206,3 +208,7 @@ Mastering the `static` keyword is **crucial** for Java interviews and real-world
 
 🔗 **Happy Learning!** 🎉  
 📢 **Share this guide with your peers!** 💬
+
+---
+
+*Previous: [← Access Modifiers](./AccessModifiers.md) | Next: [Lambda Expressions →](./LambdaExpressions.md)*

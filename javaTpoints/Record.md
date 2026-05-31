@@ -1,4 +1,6 @@
-# **Java `record` Keyword: Ultimate Guide for Interview Preparation** 🚀
+# ☕ Java `record` Keyword: Ultimate Guide for Interview Preparation 🚀
+
+**⏱️ Estimated Time**: 20 minutes | **🎯 Difficulty**: 🟡 Intermediate | **🔗 Prerequisites**: [Java Versions](./JavaDifferentVersionInfo.md)
 
 Introduced in **Java 14 (JEP 359)** as a preview feature and finalized in **Java 16 (JEP 395)**, the **`record`** keyword is a game-changer for **immutable data modeling** in Java. It reduces boilerplate code while providing **transparency**, **safety**, and **readability**.
 
@@ -202,3 +204,7 @@ Records **reduce boilerplate**, **enhance readability**, and **promote immutabil
 
 🔗 **Happy Learning!** 🎓  
 📢 **Share this guide with your peers!** 💬
+
+---
+
+*Previous: [← Java Collections](./JavaCollections.md) | Next: [Sealed Keyword →](./Sealed.md)*

@@ -491,3 +491,7 @@ modern AI architectures look the way they do! 🎯
 ---
 
 *"RNNs are like reading a book one word at a time while remembering everything. LSTMs added a notebook. Transformers said 'forget reading in order — I'll look at the whole page at once!' That last idea changed everything."* 🔁→⚡😄
+
+---
+
+*Previous: [← CNNs](03_CNNs.md) | Next: [Transformers Attention →](05_Transformers_Attention.md)*

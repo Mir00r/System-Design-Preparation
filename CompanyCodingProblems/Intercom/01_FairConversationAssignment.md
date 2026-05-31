@@ -694,3 +694,7 @@ def _pick_next(self, counts, last_assigned):
 - [LeetCode 1405 - Longest Happy String](https://leetcode.com/problems/longest-happy-string/) — Greedy with heap
 - [LeetCode 1834 - Single-Threaded CPU](https://leetcode.com/problems/single-threaded-cpu/) — Scheduling with priority queue
 - [LeetCode 630 - Course Schedule III](https://leetcode.com/problems/course-schedule-iii/) — Greedy scheduling
+
+---
+
+*Previous: [← 00 InterviewPrepGuide](./00_InterviewPrepGuide.md) | Next: [02 TweetCountsPerFrequency →](./02_TweetCountsPerFrequency.md)*

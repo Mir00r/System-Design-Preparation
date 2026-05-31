@@ -1,4 +1,6 @@
-## Mastering Java Versions for Interview Preparation: From Java 7 to Java 21 🚀
+## ☕ Mastering Java Versions for Interview Preparation: From Java 7 to Java 21 🚀
+
+**⏱️ Estimated Time**: 30 minutes | **🎯 Difficulty**: 🟡 Intermediate | **🔗 Prerequisites**: Java basics
 
 When preparing for a Java interview, especially at top tech companies, understanding the evolution of the Java language is crucial. Each version of Java brought in significant improvements and features that reflect modern software development needs. In this guide, we’ll dive into the core enhancements of Java 7, 8, 11, 17, and 21, complete with examples, best practices, and how these features are used in the industry today.
 
@@ -164,4 +166,8 @@ Thread.startVirtualThread(() -> System.out.println("Hello from a virtual thread!
 - Mention how LTS versions are favored in production.
 
 Stay curious, code passionately, and ace those interviews! 💪
+
+---
+
+*Previous: [← javaTpoints README](./README.md) | Next: [Access Modifiers →](./AccessModifiers.md)*
 

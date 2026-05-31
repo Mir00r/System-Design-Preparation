@@ -415,3 +415,7 @@ Next, we tackle the technical-behavioral hybrid: how you approach complex proble
 ---
 
 *Chapter 5 Complete! 🎉 You've earned +10 XP and the 🎤 Communicator Badge!*
+
+---
+
+*Previous: [← Conflict Resolution And Teamwork](./04_Conflict_Resolution_And_Teamwork.md) | Next: [Problem Solving And Decision Making →](./06_Problem_Solving_And_Decision_Making.md)*

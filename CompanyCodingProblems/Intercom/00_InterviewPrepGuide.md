@@ -566,3 +566,7 @@ During data modelling:
 - [Intercom Product Principles](https://www.intercom.com/blog/intercom-product-principles/)
 - [The Safety of Speed: Shipping 180x/day](https://www.intercom.com/blog/the-safety-of-speed-shipping-code-at-intercom/)
 - [AI Approving PRs at Intercom](https://www.intercom.com/blog/ai-is-approving-our-pull-requests-heres-how-we-made-it-safe/)
+
+---
+
+*Previous: [← README](./README.md) | Next: [01 FairConversationAssignment →](./01_FairConversationAssignment.md)*

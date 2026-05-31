@@ -465,3 +465,7 @@ You can now think about uncertainty like a machine. Next: how AI actually LEARNS
 ---
 
 *"Statistics: the only science that enables different experts using the same figures to draw different conclusions."* 🤓
+
+---
+
+*Previous: [← Linear Algebra](01_Linear_Algebra.md) | Next: [Calculus Optimization →](03_Calculus_Optimization.md)*

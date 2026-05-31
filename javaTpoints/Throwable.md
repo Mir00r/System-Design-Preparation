@@ -1,4 +1,6 @@
-# **📝 Java Throwable: The Ultimate Guide for Interview Preparation**
+# ☕ Java Throwable: The Ultimate Guide for Interview Preparation 🚀
+
+**⏱️ Estimated Time**: 20 minutes | **🎯 Difficulty**: 🟡 Intermediate | **🔗 Prerequisites**: [Exceptions](./Exception.md)
 
 🚀 **Mastering Java's `Throwable` hierarchy is essential for writing robust, error-resilient applications.** This guide covers everything from basics to advanced concepts, industry best practices, and real-world examples to help you **ace your interviews** and write better Java code.
 
@@ -218,3 +220,7 @@ void methodB() {
 📢 **Did you find this guide helpful? Like & Share!** 💬 **Comment your interview experiences!**
 
 #Java #ExceptionHandling #Throwable #InterviewPrep #Programming
+
+---
+
+*Previous: [← Exceptions](./Exception.md) | Next: [Java Threads →](./threads/JavaThread.md)*

@@ -476,3 +476,7 @@ Next, we'll dive deep into the most commonly asked behavioral category: Leadersh
 ---
 
 *Chapter 2 Complete! 🎉 You've earned +10 XP and the ⭐ STAR Badge!*
+
+---
+
+*Previous: [← Foundations Of Behavioral Interviews](./01_Foundations_Of_Behavioral_Interviews.md) | Next: [Leadership And Influence →](./03_Leadership_And_Influence.md)*

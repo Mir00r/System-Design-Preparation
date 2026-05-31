@@ -317,3 +317,7 @@ put(key,v): if exists → update value, move to head
 | [LC 380 - Insert Delete GetRandom O(1)](https://leetcode.com/problems/insert-delete-getrandom-o1/) | Similar dual data structure design |
 | [LC 706 - Design HashMap](https://leetcode.com/problems/design-hashmap/) | Simpler class design |
 | [Intercom P01](./01_FairConversationAssignment.md) | Same class-with-state pattern |
+
+---
+
+*Previous: [← 08 RateLimiter](./08_RateLimiter.md) | Next: [10 MeetingRoomsII →](./10_MeetingRoomsII.md)*

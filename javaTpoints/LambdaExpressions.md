@@ -1,6 +1,8 @@
-# 🚀 **The Ultimate Guide to Java Lambda Expressions: Interview Mastery**
+# ☕ The Ultimate Guide to Java Lambda Expressions: Interview Mastery 🚀
 
-## **🔍 What Are Lambda Expressions?**
+**⏱️ Estimated Time**: 35 minutes | **🎯 Difficulty**: 🟡 Intermediate | **🔗 Prerequisites**: [Static Keyword](./Static.md) | [Functional Interfaces](./FunctionalInterface.md)
+
+## 🔍 What Are Lambda Expressions?
 Lambda expressions (λ) are **anonymous functions** introduced in Java 8 that enable:
 ✔ **Concise** functional programming syntax  
 ✔ **Behavior parameterization** (passing code as data)  
@@ -601,3 +603,7 @@ These patterns are used by companies like:
 - **Netflix** for content recommendation pipelines
 - **Airbnb** for dynamic pricing calculations
 - **Banks** for fraud detection systems
+
+---
+
+*Previous: [← Static Keyword](./Static.md) | Next: [Functional Interfaces →](./FunctionalInterface.md)*

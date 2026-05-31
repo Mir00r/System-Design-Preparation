@@ -270,3 +270,7 @@ allowRequest("alice", 12):
 | [LC 359 - Logger Rate Limiter](https://leetcode.com/problems/logger-rate-limiter/) | Simpler version (dedup, not count) |
 | [Intercom P01](./01_FairConversationAssignment.md) | Class design with time-based state |
 | [Intercom P04](./04_UserPingTracker.md) | Time-bucketed counting per entity |
+
+---
+
+*Previous: [← 07 TaskScheduler](./07_TaskScheduler.md) | Next: [09 LRUCache →](./09_LRUCache.md)*

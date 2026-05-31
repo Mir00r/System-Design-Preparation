@@ -1,4 +1,6 @@
-# **📝 Java Exceptions: The Ultimate Guide for Interview Preparation**
+# ☕ Java Exceptions: The Ultimate Guide for Interview Preparation 🚀
+
+**⏱️ Estimated Time**: 30 minutes | **🎯 Difficulty**: 🟡 Intermediate | **🔗 Prerequisites**: [Error vs Exception](./Error_Vs_Exception.md)
 
 🚀 **Exception handling is a critical skill for any Java developer.** This guide covers everything from **basics to advanced concepts**, **industry best practices**, and **real-world examples** to help you **ace your interviews** and write **robust Java applications**.
 
@@ -217,3 +219,7 @@ void methodB() {
 📢 **Did you find this guide helpful? Like & Share!** 💬 **Comment your interview experiences!**
 
 #Java #ExceptionHandling #InterviewPrep #Programming #BestPractices
+
+---
+
+*Previous: [← Error vs Exception](./Error_Vs_Exception.md) | Next: [Throwable →](./Throwable.md)*

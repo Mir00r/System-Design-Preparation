@@ -417,3 +417,7 @@ The final chapter! A comprehensive one-page cheat sheet, question-to-framework m
 ---
 
 *Chapter 11 Complete! 🎉 You've earned +25 XP and the 🎯 Practice Champion Badge!*
+
+---
+
+*Previous: [← Big Tech Company Specific Guide](./10_Big_Tech_Company_Specific_Guide.md) | Next: [CheatSheet And Quick Reference →](./12_CheatSheet_And_Quick_Reference.md)*

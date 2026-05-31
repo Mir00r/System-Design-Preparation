@@ -340,3 +340,7 @@ Next, we explore the highest-signal behavioral trait in engineering: ownership. 
 ---
 
 *Chapter 8 Complete! 🎉 You've earned +10 XP and the ⏰ Time Master Badge!*
+
+---
+
+*Previous: [← Growth Mindset And Adaptability](./07_Growth_Mindset_And_Adaptability.md) | Next: [Ownership And Accountability →](./09_Ownership_And_Accountability.md)*

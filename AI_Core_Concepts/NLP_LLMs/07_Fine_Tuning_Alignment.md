@@ -576,3 +576,7 @@ Don't fine-tune until you've exhausted:
 ---
 
 *"RLHF is like raising a child: you don't program them with rules, you show them good behavior and bad behavior, and they learn your values. That's why ChatGPT feels like it has a personality — it was raised well!"* 🧒🎓😄
+
+---
+
+*Previous: [← Prompt Engineering](05_Prompt_Engineering.md) | Next: [RAG Pattern →](../AI_Design_Patterns/02_RAG_Pattern.md)*

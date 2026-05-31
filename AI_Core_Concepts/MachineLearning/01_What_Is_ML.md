@@ -415,3 +415,7 @@ G) Predicting house prices → SUPERVISED (labeled with actual prices)
 ---
 
 *"My friend asked me what Machine Learning is. I said: 'It's like teaching a dog new tricks, except the dog has a GPU and the tricks are predicting your shopping habits.'"* 🐕💻
+
+---
+
+*Previous: [← Information Theory](../Foundations/04_Information_Theory.md) | Next: [Supervised Learning →](02_Supervised_Learning.md)*

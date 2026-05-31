@@ -618,3 +618,7 @@ Total new code: ~200 lines! Not bad for an "AI feature"! 🎯
 ---
 
 *"I told my manager we're adding AI to our Java app. He asked if we need to rewrite in Python. I said 'Just add a Spring AI dependency.' His face was priceless."* ☕😄
+
+---
+
+*Previous: [← ML Pipeline Architecture](../AI_System_Design/01_ML_Pipeline_Architecture.md) | Next: [Java AI Ecosystem →](01_Java_AI_Ecosystem.md)*

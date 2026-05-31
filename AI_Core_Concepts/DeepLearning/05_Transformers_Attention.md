@@ -606,3 +606,7 @@ Or jump to understanding how these become LLMs:
 ---
 
 *"The transformer paper should have been called 'Matrix Multiplication Is All You Need' but that's less catchy."* 😄
+
+---
+
+*Previous: [← RNNs LSTMs](04_RNNs_LSTMs.md) | Next: [Word Embeddings →](../NLP_LLMs/02_Word_Embeddings.md)*

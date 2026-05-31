@@ -490,3 +490,7 @@ In the next chapter, you'll learn the **STAR framework** in depth — the most p
 ---
 
 *Chapter 1 Complete! 🎉 You've earned +10 XP and the 🎖️ Foundation Badge!*
+
+---
+
+*Previous: [← README](./README.md) | Next: [STAR Method Mastery →](./02_STAR_Method_Mastery.md)*

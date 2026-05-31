@@ -279,3 +279,7 @@ messages:       id, conversation_id, sender_id, content, reply_to_id, created_at
 6. **For data modelling: start entities → relationships → indexes**
 7. **For role chat: ask questions that show product thinking**
 8. **Be yourself — they're checking cultural fit, not acting skills**
+
+---
+
+*Previous: [← 16 AdditionalCodingProblems](./16_AdditionalCodingProblems.md) | Next: [18 CompanyKnowledge 2026 →](./18_CompanyKnowledge_2026.md)*

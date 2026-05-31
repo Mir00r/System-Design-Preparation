@@ -306,3 +306,7 @@ Next, we dive deep into company-specific behavioral preparation — Amazon's 16 
 ---
 
 *Chapter 9 Complete! 🎉 You've earned +10 XP and the ⚔️ Warrior Badge!*
+
+---
+
+*Previous: [← Time Management And Prioritization](./08_Time_Management_And_Prioritization.md) | Next: [Big Tech Company Specific Guide →](./10_Big_Tech_Company_Specific_Guide.md)*

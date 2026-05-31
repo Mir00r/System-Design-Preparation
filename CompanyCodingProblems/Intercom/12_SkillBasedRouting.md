@@ -376,3 +376,7 @@ Map<String, Queue<String>> waitingQueues; // skill → queue of conversationIds
 | [LC 621 - Task Scheduler](https://leetcode.com/problems/task-scheduler/) | Resource scheduling with constraints |
 | [LC 253 - Meeting Rooms II](https://leetcode.com/problems/meeting-rooms-ii/) | Capacity planning |
 | [Intercom P10](./10_MeetingRoomsII.md) | Same "min resources for concurrent load" |
+
+---
+
+*Previous: [← 11 DesignLeaderboard](./11_DesignLeaderboard.md) | Next: [13 MinicomRoundPrep →](./13_MinicomRoundPrep.md)*

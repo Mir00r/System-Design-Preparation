@@ -468,3 +468,7 @@ def getTweetCountsPerFrequency(self, freq, tweetName, startTime, endTime):
 - [HashMap fundamentals](../../DataStructures/HashTables/)
 - [Binary Search](../../Algorithms/Searching/)
 - [Time-Series Databases](../../Database/TimeSeries_Databases.md)
+
+---
+
+*Previous: [← 01 FairConversationAssignment](./01_FairConversationAssignment.md) | Next: [03 LongestSubstringNoRepeating →](./03_LongestSubstringNoRepeating.md)*
