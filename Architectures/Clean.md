@@ -251,7 +251,131 @@ public class JpaUserRepository implements UserRepository {
 | **Alternative** | MVC (for simpler apps) |
 
 ---
+## 🎮 Gamification: Level Up Challenges!
 
+### 🎲 Challenge 1: Spot the Dependency Violation 🕵️
+
+> **Question**: Which line violates Clean Architecture's Dependency Rule?
+> ```java
+> // In the Use Case layer
+> public class CreateOrderUseCase {
+>     private final JpaOrderRepository repository;  // Line A
+>     private final Order order;                     // Line B
+>     private final EmailService emailService;       // Line C
+>     
+>     public void execute(OrderRequest request) {
+>         order.validate(request);                   // Line D
+>         repository.save(order);                    // Line E
+>     }
+> }
+> ```
+>
+> <details>
+> <summary>🔓 Click to reveal answer</summary>
+>
+> **Line A violates the rule!** 🚨
+>
+> `JpaOrderRepository` is a framework-specific class (outer layer). The Use Case should depend on an INTERFACE (`OrderRepository`), not a concrete implementation.
+>
+> **Fix:**
+> ```java
+> private final OrderRepository repository; // Interface (inner layer) ✅
+> ```
+>
+> Line C (EmailService) could also be a violation if it's a concrete implementation. It should be an interface too!
+> </details>
+
+### 🎲 Challenge 2: Map the System 🗺️
+
+> **Scenario**: You're building a **ride-sharing app** (like Uber). Map these components to Clean Architecture layers:
+>
+> Components: `RideController`, `Ride`, `CalculateFareUseCase`, `GoogleMapsAdapter`, `PostgresRideRepository`, `RideRepository interface`, `RideStatus enum`
+>
+> <details>
+> <summary>🔓 Click to reveal answer</summary>
+>
+> | Component | Layer | Why? |
+> |-----------|-------|------|
+> | `Ride`, `RideStatus` | **Entities** | Core business objects, no dependencies |
+> | `CalculateFareUseCase` | **Use Cases** | Application-specific business rule |
+> | `RideRepository` (interface) | **Use Cases** | Port (interface) defined by business need |
+> | `RideController` | **Interface Adapters** | Converts HTTP → Use Case calls |
+> | `PostgresRideRepository` | **Frameworks** | Concrete DB implementation |
+> | `GoogleMapsAdapter` | **Frameworks** | External service adapter |
+>
+> **Key Insight**: The `RideRepository` INTERFACE lives in the Use Case layer, but its IMPLEMENTATION lives in the Framework layer. This is Dependency Inversion in action!
+> </details>
+
+### 🎲 Challenge 3: The Refactoring Puzzle 🧩
+
+> **Task**: This code is a "Dirty Architecture". Refactor it mentally into Clean Architecture:
+> ```java
+> @RestController
+> public class PaymentController {
+>     @Autowired
+>     private JdbcTemplate jdbcTemplate;
+>     
+>     @PostMapping("/pay")
+>     public String pay(@RequestBody Map<String, Object> body) {
+>         String cardNumber = (String) body.get("card");
+>         double amount = (double) body.get("amount");
+>         
+>         // Validate
+>         if (amount <= 0) throw new RuntimeException("Invalid amount");
+>         
+>         // Call Stripe API directly
+>         Stripe.apiKey = "sk_test_123";
+>         Charge.create(Map.of("amount", amount, "source", cardNumber));
+>         
+>         // Save to DB directly
+>         jdbcTemplate.update("INSERT INTO payments ...", amount, cardNumber);
+>         
+>         return "Payment successful";
+>     }
+> }
+> ```
+>
+> <details>
+> <summary>🔓 Click to reveal answer</summary>
+>
+> **Clean Architecture Refactoring:**
+>
+> | Layer | Class | Responsibility |
+> |-------|-------|---------------|
+> | **Entity** | `Payment` | Business rules (validate amount, card format) |
+> | **Use Case** | `ProcessPaymentUseCase` | Orchestrate: validate → charge → save |
+> | **Interface** | `PaymentGateway` (interface) | Port for payment processing |
+> | **Interface** | `PaymentRepository` (interface) | Port for persistence |
+> | **Adapter** | `PaymentController` | Convert HTTP request → UseCase call |
+> | **Framework** | `StripePaymentGateway` | Implements PaymentGateway |
+> | **Framework** | `JpaPaymentRepository` | Implements PaymentRepository |
+>
+> **Now you can**: Switch from Stripe to PayPal by creating `PayPalPaymentGateway` — NO business logic changes! 🎉
+> </details>
+
+---
+
+## 🏆 Achievement Unlocked!
+
+```
+┌─────────────────────────────────────────────────────────────────────────┐
+│  🎖️ ACHIEVEMENT: Pattern Explorer Level 2                               │
+│                                                                         │
+│  You now understand:                                                    │
+│  ✅ The 4 layers of Clean Architecture                                  │
+│  ✅ The Dependency Rule (inner layers don't know about outer ones)       │
+│  ✅ How to identify and fix violations                                   │
+│  ✅ Real-world mapping of components to layers                           │
+│                                                                         │
+│  NEXT: → Onion Architecture (Level 2 continued)                         │
+│  Boss Battle: Design a banking system using Clean Architecture!          │
+└─────────────────────────────────────────────────────────────────────────┘
+```
+
+👉 **[Next: Onion Architecture →](./Onion.md)**  
+👉 **[Back to Architecture Overview →](./README.md)**
+
+---
 ## 🎯 **Final Thoughts**
 Clean Architecture is **not a silver bullet**, but it’s **essential for large-scale, maintainable systems**. Mastering it will make you a better architect and improve your interview performance! 🚀
 

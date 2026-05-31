@@ -74,7 +74,42 @@ Complete gamified tutorial series for mastering behavioral interviews:
 - Normalization concepts
 - Deadlock prevention
 
-### Architecture Patterns
+### 🏛️ Software Architecture Mastery (NEW! 🚀)
+Complete gamified tutorial series for mastering software architecture patterns:
+- **Layered (N-Tier)**: Foundation architecture every developer starts with
+- **Clean Architecture**: Uncle Bob's masterpiece for enterprise apps
+- **Hexagonal (Ports & Adapters)**: Integration-heavy systems
+- **Onion Architecture**: Domain-centric with dependency inversion
+- **Event-Driven**: Real-time, reactive systems (Netflix, Uber)
+- **CQRS**: Separate read/write for high-performance systems
+- **Modular Architecture**: Feature-first parallel development
+- **Microkernel**: Plugin-based extensible systems
+- **SOA**: Enterprise service reuse
+- **Serverless**: Pay-per-use cloud functions
+- **Architecture Anti-Patterns**: What NOT to do (learn from others' mistakes)
+- **Architecture Decision Records**: Document WHY decisions were made
+- **Comparison Matrix**: Side-by-side trade-off analysis
+
+👉 **[Start Your Architecture Journey →](./Architectures/README.md)**
+
+### 🍃 Spring Boot Mastery (NEW! 🚀)
+Complete gamified tutorial series for mastering Spring Boot internals:
+- **Dependency Injection & IoC**: The CORE foundation of everything
+- **Core Container**: Beans, Context, ApplicationContext lifecycle
+- **Annotations Deep Dive**: Every annotation explained with real use cases
+- **AOP (Aspect-Oriented Programming)**: Cross-cutting concerns mastery
+- **@Transactional**: Most misunderstood feature (interview favorite!)
+- **Spring Security**: Authentication, Authorization, JWT, OAuth2
+- **Hibernate & JPA**: ORM mastery, N+1 problem, performance
+- **Spring Cloud**: Microservices infrastructure (Eureka, Gateway, Config)
+- **Spring Batch**: Large-scale batch processing
+- **Spring Boot Internals**: How auto-configuration REALLY works
+- **Performance Tuning**: Make your apps blazing fast
+- **Testing Strategies**: Unit, Integration, Testcontainers, TDD
+
+👉 **[Start Your Spring Boot Journey →](./SpringBoot/README.md)**
+
+### Architecture Patterns (Legacy)
 - CQRS (Command Query Responsibility Segregation)
 - SAGA pattern
 - SOLID principles

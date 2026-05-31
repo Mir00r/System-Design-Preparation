@@ -348,4 +348,145 @@ pie
 **Pro Tip:** Always relate answers to business impact:
 - Loose coupling → faster feature development
 - Testability → higher quality → fewer production issues
+
+---
+
+## 🎮 Gamification: Level Up Challenges!
+
+### 🎲 Challenge 1: Fix the Bad DI 🔧
+
+> **This code has 3 DI anti-patterns. Find them all!**
+> ```java
+> @RestController
+> public class UserController {
+>     @Autowired
+>     private UserService userService;       // ❓
+>     
+>     @Autowired
+>     private EmailService emailService;     // ❓
+>     
+>     @Autowired
+>     private LogService logService;         // ❓
+>     
+>     @PostMapping("/users")
+>     public User createUser(@RequestBody User user) {
+>         logService.log("Creating user");
+>         User saved = userService.create(user);
+>         emailService.sendWelcome(saved);
+>         return saved;
+>     }
+> }
+> ```
+>
+> <details>
+> <summary>🔓 Click to reveal answer</summary>
+>
+> **Anti-Patterns Found:**
+> 1. ❌ **Field injection** — Cannot be immutable, hard to test
+> 2. ❌ **Too many dependencies** — Controller is doing too much (God Controller)
+> 3. ❌ **Direct email sending in controller** — Should be in service layer
+>
+> **Fixed Version:**
+> ```java
+> @RestController
+> public class UserController {
+>     private final UserService userService; // ✅ Only what controller NEEDS
+>     
+>     public UserController(UserService userService) { // ✅ Constructor DI
+>         this.userService = userService;
+>     }
+>     
+>     @PostMapping("/users")
+>     public User createUser(@RequestBody User user) {
+>         return userService.create(user); // ✅ Service handles email + logging
+>     }
+> }
+> ```
+> </details>
+
+### 🎲 Challenge 2: The Scope Trap 🪤
+
+> **Question**: What happens when a Singleton bean depends on a Prototype bean?
+> ```java
+> @Component @Scope("prototype")
+> class ShoppingCart { List<Item> items = new ArrayList<>(); }
+>
+> @Service // Singleton by default
+> class OrderService {
+>     @Autowired private ShoppingCart cart; // ❓ What's the problem?
+> }
+> ```
+>
+> <details>
+> <summary>🔓 Click to reveal answer</summary>
+>
+> **THE TRAP**: The `ShoppingCart` is injected ONCE when `OrderService` is created. Even though it's `@Scope("prototype")`, ALL users share the SAME cart instance! 🛒💀
+>
+> **Fix Options:**
+> 1. ✅ Use `ObjectFactory<ShoppingCart>` or `Provider<ShoppingCart>`
+> 2. ✅ Use `@Lookup` method
+> 3. ✅ Use scoped proxy: `@Scope(value = "prototype", proxyMode = ScopedProxyMode.TARGET_CLASS)`
+>
+> **This is asked in 80% of Spring interviews!** 🎯
+> </details>
+
+### 🎲 Challenge 3: Predict the Output 🔮
+
+> **What prints when the app starts?**
+> ```java
+> @Component
+> public class ServiceA {
+>     public ServiceA() { System.out.println("A created"); }
+>     @PostConstruct
+>     public void init() { System.out.println("A initialized"); }
+> }
+>
+> @Component 
+> public class ServiceB {
+>     private final ServiceA a;
+>     public ServiceB(ServiceA a) { 
+>         System.out.println("B created"); 
+>         this.a = a;
+>     }
+>     @PostConstruct
+>     public void init() { System.out.println("B initialized"); }
+> }
+> ```
+>
+> <details>
+> <summary>🔓 Click to reveal answer</summary>
+>
+> **Output:**
+> ```
+> A created
+> A initialized
+> B created
+> B initialized
+> ```
+>
+> **Why?** Spring creates `ServiceA` first (because `ServiceB` depends on it), runs `A`'s `@PostConstruct`, THEN creates `B` with the fully-initialized `A`, and finally runs `B`'s `@PostConstruct`.
+>
+> **Key insight**: `@PostConstruct` runs AFTER all dependencies are injected but BEFORE the bean is used by others.
+> </details>
+
+---
+
+## 🏆 Achievement Unlocked!
+
+```
+┌──────────────────────────────────────────────────────────────┐
+│  🌱 ACHIEVEMENT: Spring Seedling Level 1                     │
+│                                                              │
+│  You now understand:                                         │
+│  ✅ IoC Container fundamentals                               │
+│  ✅ All 3 DI types (Constructor > Setter > Field)            │
+│  ✅ Bean scopes and lifecycle                                 │
+│  ✅ Common pitfalls (circular deps, scope injection)          │
+│                                                              │
+│  NEXT: → Core Container (Beans & Context)                    │
+└──────────────────────────────────────────────────────────────┘
+```
+
+👉 **[Next: Core Container →](./CoreContainer.md)**  
+👉 **[Back to Spring Boot Overview →](./README.md)**
 - Proper DI → easier maintenance → lower costs

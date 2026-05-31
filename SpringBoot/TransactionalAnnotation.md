@@ -349,3 +349,156 @@ graph TD
 - Consistency: Valid state transitions
 - Isolation: Concurrent access control
 - Durability: Survives crashes
+
+---
+
+## 🎮 Gamification: Level Up Challenges!
+
+### 🎲 Challenge 1: The Self-Invocation Trap 🪤 (Interview Favorite!)
+
+> **This code has a bug. The @Transactional on `processItems()` doesn't work! Why?**
+> ```java
+> @Service
+> public class OrderService {
+>     
+>     public void processOrder(Order order) {
+>         // ... some logic ...
+>         processItems(order.getItems()); // Calling another method in SAME class!
+>     }
+>     
+>     @Transactional  // 💀 THIS DOESN'T WORK!
+>     public void processItems(List<Item> items) {
+>         for (Item item : items) {
+>             inventoryRepo.deduct(item);
+>         }
+>     }
+> }
+> ```
+>
+> <details>
+> <summary>🔓 Click to reveal answer</summary>
+>
+> **THE TRAP**: Spring `@Transactional` works via **PROXY**. When you call a method from WITHIN the same class, it BYPASSES the proxy — so the annotation is completely ignored!
+>
+> ```
+> External call:  Client → Proxy → @Transactional → Method  ✅
+> Self call:      this.processItems() → Method (NO PROXY!)  ❌
+> ```
+>
+> **Fixes:**
+> 1. ✅ Move `processItems()` to a DIFFERENT service
+> 2. ✅ Inject self: `@Autowired private OrderService self; self.processItems(...)`
+> 3. ⚠️ Use `AopContext.currentProxy()` (hacky, not recommended)
+>
+> **This is the #1 most asked @Transactional question!** 🏆
+> </details>
+
+### 🎲 Challenge 2: Predict the Rollback Behavior 🔮
+
+> **Scenario**: What happens in each case?
+>
+> ```java
+> @Transactional
+> public void case1() {
+>     repo.save(entity);
+>     throw new RuntimeException("Oops"); // Rollback? 🤔
+> }
+>
+> @Transactional
+> public void case2() {
+>     repo.save(entity);
+>     throw new IOException("File not found"); // Rollback? 🤔
+> }
+>
+> @Transactional(rollbackFor = Exception.class)
+> public void case3() {
+>     repo.save(entity);
+>     throw new IOException("File not found"); // Rollback? 🤔
+> }
+> ```
+>
+> <details>
+> <summary>🔓 Click to reveal answer</summary>
+>
+> | Case | Rollback? | Why? |
+> |------|-----------|------|
+> | Case 1 | ✅ YES | RuntimeException → always rolls back by default |
+> | Case 2 | ❌ NO! | Checked exceptions (IOException) do NOT trigger rollback by default! |
+> | Case 3 | ✅ YES | `rollbackFor = Exception.class` catches ALL exceptions |
+>
+> **The Rule:**
+> - `RuntimeException` + `Error` → Rollback ✅
+> - Checked `Exception` → NO rollback ❌ (unless specified!)
+>
+> **Best Practice:** Always use `@Transactional(rollbackFor = Exception.class)` to be safe!
+> </details>
+
+### 🎲 Challenge 3: The Propagation Puzzle 🧩
+
+> **What's the transaction behavior when calling nested services?**
+> ```java
+> @Service
+> class ServiceA {
+>     @Transactional(propagation = REQUIRED)     // Default
+>     public void methodA() {
+>         repo.save(entityA);
+>         serviceB.methodB();  // What happens to B's transaction?
+>     }
+> }
+>
+> @Service  
+> class ServiceB {
+>     @Transactional(propagation = REQUIRES_NEW)
+>     public void methodB() {
+>         repo.save(entityB);
+>         throw new RuntimeException("B failed!");
+>     }
+> }
+> ```
+>
+> **Question**: Does entityA get saved? Does entityB get saved?
+>
+> <details>
+> <summary>🔓 Click to reveal answer</summary>
+>
+> | Entity | Saved? | Why? |
+> |--------|--------|------|
+> | entityA | ❌ NO | RuntimeException propagates up to A, rolling back A's transaction |
+> | entityB | ❌ NO | B's `REQUIRES_NEW` transaction rolled back due to its own exception |
+>
+> **Key Insight**: `REQUIRES_NEW` creates a separate transaction for B. B's rollback is independent. BUT the exception still propagates to A, causing A to rollback too!
+>
+> **To save entityA despite B's failure:**
+> ```java
+> @Transactional
+> public void methodA() {
+>     repo.save(entityA);
+>     try {
+>         serviceB.methodB();
+>     } catch (RuntimeException e) {
+>         log.warn("B failed, but A continues");
+>     }
+> }
+> ```
+> </details>
+
+---
+
+## 🏆 Achievement Unlocked!
+
+```
+┌──────────────────────────────────────────────────────────────┐
+│  🗡️ ACHIEVEMENT: AOP Assassin Level 4                        │
+│                                                              │
+│  You now understand:                                         │
+│  ✅ @Transactional internals (proxy-based)                   │
+│  ✅ Propagation behaviors (REQUIRED, REQUIRES_NEW, etc.)     │
+│  ✅ Isolation levels and their trade-offs                     │
+│  ✅ Common pitfalls (self-invocation, checked exceptions)     │
+│                                                              │
+│  NEXT: → Spring Security                                     │
+└──────────────────────────────────────────────────────────────┘
+```
+
+👉 **[Next: Spring Security →](./SpringSecurity.md)**  
+👉 **[Back to Spring Boot Overview →](./README.md)**
