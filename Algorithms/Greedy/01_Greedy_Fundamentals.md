@@ -458,3 +458,7 @@ Lesson: Need DP for 0/1 Knapsack!
 
 *Remember: "Sometimes the best choice now is the best choice forever!"* 🎯✨
 
+---
+
+*Previous: [← DP Patterns](../DynamicProgramming/02_DP_Patterns.md) | Next: [String Algorithms →](../StringAlgorithms/01_String_Matching.md)*
+

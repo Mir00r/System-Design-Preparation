@@ -459,3 +459,7 @@ Index 5: "b" doesn't match (0)
 
 *Remember: "Strings connect characters, algorithms connect ideas!"* 🔤✨
 
+---
+
+*Previous: [← Greedy Fundamentals](../Greedy/01_Greedy_Fundamentals.md) | Next: [Bit Manipulation →](../BitManipulation/01_Bit_Fundamentals.md)*
+

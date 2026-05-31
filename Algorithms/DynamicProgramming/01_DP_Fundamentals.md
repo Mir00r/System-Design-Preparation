@@ -627,3 +627,7 @@ dp[4] = max(1+11, 11) = 12 ✅
 
 *Remember: "In DP, we trade space for time - and that's a good deal!"* 💎✨
 
+---
+
+*Previous: [← Graph Traversal](../GraphAlgorithms/01_Graph_Traversal.md) | Next: [DP Patterns →](./02_DP_Patterns.md)*
+

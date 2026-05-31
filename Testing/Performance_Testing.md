@@ -158,6 +158,45 @@ SATURATION POINT:
 
 ---
 
+## 🏢 Industry Performance Testing Practices
+
+| Company | Tool / Approach | Scale | Key Insight |
+|---------|----------------|-------|-------------|
+| Netflix | ChAOS + JMeter | 100M+ users | Tests resilience under degraded conditions, not just peak load |
+| Amazon | Internal tooling | Prime Day: 300K TPS | Separate perf tests per microservice; automated regression alerts |
+| Google | Borg-level load generation | Search: millions QPS | Every major service has latency SLOs enforced in CI |
+| Stripe | Continuous load testing | 100K+ TPS | Canary deploys with real-time latency comparison |
+| LinkedIn | Gatling + custom tooling | 1B+ members | Introduced "latency budgets" per API |
+
+---
+
+## 🎲 Mini Challenge
+
+> 🎲 **CHALLENGE** (5 minutes):
+> You deploy a new version of your search service. After deployment, p99 latency
+> jumps from 200ms to 800ms but p50 latency stays the same (50ms).
+> What does this tell you, and what would you investigate first?
+
+<details>
+<summary>💡 Click to reveal answer</summary>
+
+**What it tells you:**
+- p50 unchanged → the median case is fine (most requests are OK)
+- p99 jumped 4x → ~1% of requests are very slow (tail latency problem)
+
+**Root causes to investigate (in order):**
+1. **GC pauses** — Java STW GC pauses affect ~1% of requests. Profile heap allocation. Look for large object creation, G1GC tuning.
+2. **Database query plans** — A new code path may hit a slow query only for certain data patterns. Check slow query log for queries >200ms.
+3. **Lock contention** — New code might contend with existing concurrent operations. Thread dump during slow period.
+4. **External service timeout** — If your service calls another service, tail latency from that service adds to yours. Trace with distributed tracing (Zipkin/Jaeger).
+5. **Cold cache paths** — New feature may have a cache miss path that's slow. Check cache hit rate metrics.
+
+**Investigation tool**: Flame graph profiling (async-profiler for Java) + distributed tracing + percentile latency breakdown by endpoint.
+
+</details>
+
+---
+
 ## 🔗 What to Read Next
 
 1. **[Testing/TDD_BDD.md](./TDD_BDD.md)** — Test-driven development

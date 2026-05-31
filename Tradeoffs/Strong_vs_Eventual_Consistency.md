@@ -486,3 +486,7 @@ For each feature, choose the consistency level and justify:
 ---
 
 *"Strong consistency is like a stoplight — it keeps everyone safe but slows traffic. Eventual consistency is like a roundabout — keeps traffic flowing but requires everyone to be careful." — Distributed systems wisdom* 💪
+
+---
+
+*Previous: [← Synchronous vs Asynchronous](./Synchronous_vs_Asynchronous.md) | Next: [Stateful vs Stateless →](./Stateful_vs_Stateless_Design.md)*

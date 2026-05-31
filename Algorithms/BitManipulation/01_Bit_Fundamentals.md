@@ -461,3 +461,7 @@ boolean oppositeSigns(int a, int b) {
 
 *Remember: "10 types of people: those who understand binary, and those who don't!"* 🔢✨
 
+---
+
+*Previous: [← String Algorithms](../StringAlgorithms/01_String_Matching.md) | Next: [Algorithm Cheatsheet →](../CheatSheet.md)*
+

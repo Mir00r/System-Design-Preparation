@@ -411,3 +411,7 @@ For each scenario, pick the best real-time approach:
 ---
 
 *"Long polling is the mullet of real-time: HTTP in the front, persistent connection in the back." — Unknown Web Developer* 🔌
+
+---
+
+*Previous: [← Batch vs Stream Processing](./Batch_vs_Stream_Processing.md) | Next: [Back to Tradeoffs Overview →](./README.md)*

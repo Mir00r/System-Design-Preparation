@@ -388,3 +388,7 @@ Classify each service and explain HOW you'd make it stateless if possible:
 ---
 
 *"A stateless server is like a vending machine — put in your money and selection, get your product. It doesn't remember your last visit, and that's exactly why it never breaks down." — Cloud architecture wisdom* 🐟
+
+---
+
+*Previous: [← Strong vs Eventual Consistency](./Strong_vs_Eventual_Consistency.md) | Next: [Push vs Pull Architecture →](./Push_vs_Pull_Architecture.md)*

@@ -382,3 +382,7 @@ For each scenario, identify the PRIMARY tradeoff and which side to choose:
 ---
 
 *"The mark of a senior engineer isn't knowing the answers — it's knowing the questions to ask. And the most important question is always: 'What am I willing to give up?'" — Every staff engineer ever* ⚖️
+
+---
+
+*Previous: [← Tradeoffs Overview](./README.md) | Next: [Vertical vs Horizontal Scaling →](./Vertical_vs_Horizontal_Scaling.md)*

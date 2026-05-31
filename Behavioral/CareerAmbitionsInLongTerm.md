@@ -53,3 +53,7 @@ By following this approach:
 
 > "Yes, I plan to stay long term at Company X. My ambition is to grow technically and strategically within the bank, moving into senior technical roles while continuing to deliver impactful solutions that align with Company X's digital and business goals."
 
+---
+
+*Previous: [← Self Introduction](./SelfIntroduction.md) | Next: [Prioritise Your Work →](./PrioritiseYourWork.md)*
+

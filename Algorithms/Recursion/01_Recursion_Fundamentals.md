@@ -558,3 +558,7 @@ public int fib(int n, int[] memo) {
 
 *Remember: "To understand recursion, you must first understand recursion!"* ♻️✨
 
+---
+
+*Previous: [← Binary Search Mastery](../Searching/01_BinarySearch_Mastery.md) | Next: [Backtracking Patterns →](./02_Backtracking_Patterns.md)*
+

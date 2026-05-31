@@ -374,3 +374,7 @@ Architecture: Kappa style — all sales events flow through Kafka. Stream proces
 ---
 
 *"Batch is for looking back. Streaming is for looking forward. Great systems do both." — Jay Kreps, Creator of Apache Kafka* 🌊
+
+---
+
+*Previous: [← REST vs RPC](./REST_vs_RPC.md) | Next: [Long Polling vs WebSockets →](./Long_Polling_vs_WebSockets.md)*

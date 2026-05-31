@@ -528,3 +528,7 @@ Topological order: [0, 2, 1, 4, 3]
 
 *Remember: "Graphs connect the world!"* 🗺️✨
 
+---
+
+*Previous: [← Backtracking Patterns](../Recursion/02_Backtracking_Patterns.md) | Next: [DP Fundamentals →](../DynamicProgramming/01_DP_Fundamentals.md)*
+

@@ -385,3 +385,7 @@ Instagram has 2 billion users. Some accounts have 500M followers (e.g., @cristia
 ---
 
 *"Push is optimistic: 'You'll want this!' Pull is pragmatic: 'Give me what I need.' Great systems know when to be each." — Feed Architecture Wisdom* ⬆️⬇️
+
+---
+
+*Previous: [← Stateful vs Stateless](./Stateful_vs_Stateless_Design.md) | Next: [Concurrency vs Parallelism →](./Concurrency_vs_Parallelism.md)*

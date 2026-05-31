@@ -620,3 +620,7 @@ return left;
 
 *Remember: "When in doubt, divide and conquer!"* 🔍⚡
 
+---
+
+*Previous: [← Sorting Fundamentals](../Sorting/01_Sorting_Fundamentals.md) | Next: [Recursion Fundamentals →](../Recursion/01_Recursion_Fundamentals.md)*
+

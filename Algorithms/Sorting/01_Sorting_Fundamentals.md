@@ -669,3 +669,7 @@ public class RadixSort {
 
 *Remember: "A sorted array is a happy array!"* 🔄
 
+---
+
+*Previous: [← Getting Started](../00_GettingStarted.md) | Next: [Binary Search Mastery →](../Searching/01_BinarySearch_Mastery.md)*
+

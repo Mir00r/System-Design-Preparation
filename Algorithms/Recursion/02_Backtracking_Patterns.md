@@ -555,3 +555,7 @@ private List<Solution> backtrack(State state) {
 
 *Remember: "Try all paths, backtrack when stuck!"* 🔙✨
 
+---
+
+*Previous: [← Recursion Fundamentals](./01_Recursion_Fundamentals.md) | Next: [Graph Traversal →](../GraphAlgorithms/01_Graph_Traversal.md)*
+

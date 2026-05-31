@@ -128,6 +128,49 @@ E2E (test user journeys):
 
 ---
 
+## 🏢 How FAANG Companies Apply the Testing Pyramid
+
+| Company | Unit % | Integration % | E2E % | Key Practice |
+|---------|--------|----------------|-------|-------------|
+| Google | ~70% | ~20% | ~10% | TAP (Test Automation Platform); mandatory code coverage per PR |
+| Meta | ~65% | ~25% | ~10% | Sapienz automated test generation; blame system for flaky tests |
+| Amazon | ~70% | ~20% | ~10% | Integration tests against local DynamoDB/SQS; E2E per service boundary |
+| Netflix | ~60% | ~30% | ~10% | Chaos Engineering complements testing; regionalized E2E smoke tests |
+| Uber | ~65% | ~25% | ~10% | Mobile E2E with Maestro; contract tests between 2000+ microservices |
+
+---
+
+## 🎲 Mini Challenge
+
+> 🎲 **CHALLENGE** (3 minutes):
+> Your e-commerce app has these tests. Classify each into the correct pyramid layer,
+> and identify which tests should be moved:
+>
+> - Test that `calculateShipping(weight, zone)` returns correct price
+> - Test that `POST /orders` saves to database and returns 201
+> - Selenium test that clicks "Add to Cart" and verifies item appears
+> - Test that verifies `OrderService` calls `PaymentService` mock
+> - Integration test that verifies `SELECT * FROM products WHERE id = ?` query
+> - Selenium test that verifies error message on invalid email format
+
+<details>
+<summary>💡 Click to reveal answers</summary>
+
+| Test | Layer | Note |
+|------|-------|------|
+| `calculateShipping(weight, zone)` | ✅ Unit | Pure logic, no dependencies |
+| `POST /orders` saves to DB | ✅ Integration | Needs real DB (use Testcontainers) |
+| Selenium "Add to Cart" | ✅ E2E | Full user journey |
+| `OrderService` calls mock | ✅ Unit | Testing behavior in isolation |
+| `SELECT * FROM products` query | ✅ Integration | Real DB query needed |
+| Selenium error on invalid email | ❌ **Move to Unit** | Email validation is pure logic. Selenium for this is 100x slower than a unit test. |
+
+**The key insight**: Selenium tests for form validation are the most common testing anti-pattern. A unit test runs in <1ms. A Selenium test for the same assertion runs in 5-30 seconds.
+
+</details>
+
+---
+
 ## 🔗 What to Read Next
 
 1. **[Testing/Unit_Testing.md](./Unit_Testing.md)** — JUnit 5, Mockito patterns

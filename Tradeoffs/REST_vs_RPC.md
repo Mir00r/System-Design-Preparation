@@ -387,3 +387,7 @@ Key insight: Communication style should match the relationship (public vs intern
 ---
 
 *"REST is an architectural style. RPC is a paradigm. GraphQL is a query language. They're not competitors — they're tools for different problems." — API Design Wisdom* 🌐
+
+---
+
+*Previous: [← Concurrency vs Parallelism](./Concurrency_vs_Parallelism.md) | Next: [Batch vs Stream Processing →](./Batch_vs_Stream_Processing.md)*

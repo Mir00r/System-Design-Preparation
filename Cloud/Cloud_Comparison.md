@@ -161,6 +161,66 @@ STRATEGY:
 
 ---
 
+## 🎲 Mini Challenge
+
+> 🎲 **CHALLENGE** (5 minutes):
+> You're a startup that just raised $2M. Your team of 6 engineers is building a real-time analytics platform
+> for e-commerce (ingests purchase events, shows dashboards, trains recommendation models).
+> The CTO wants to choose a cloud provider. What do you recommend and why?
+
+<details>
+<summary>💡 Click to reveal recommendation framework</summary>
+
+**Analysis:**
+
+```
+REQUIREMENT              BEST MATCH    REASONING
+─────────────────────────────────────────────────────────────────────
+Real-time event ingestion AWS (Kinesis) or GCP (Pub/Sub)   Both excellent
+Analytics / Dashboards   GCP (BigQuery)                    BQ's slot-based pricing
+                                                            cheaper at startup scale
+ML / Recommendations     GCP (Vertex AI) or AWS (SageMaker) GCP slightly ahead for ML
+Team of 6 (productivity) GCP (Cloud Run, simpler IAM)       Gentler learning curve
+Startup budget           GCP (always-free tier, $100K credits) Longest runway
+```
+
+**Recommendation: GCP**
+
+Reasoning:
+1. BigQuery — real-time streaming analytics with zero ops, pay-per-query pricing
+2. Cloud Run — serverless containers, scales to zero (no idle costs for 6 engineers)
+3. Vertex AI — pre-built recommendation models with minimal ML infrastructure
+4. Always-free tier on many services (Pub/Sub 10GB/month free)
+5. GCP's simpler IAM model reduces security configuration burden for a small team
+
+**When AWS wins instead:**
+- Team has existing AWS expertise → productivity beats feature differences
+- Need a service that only exists on AWS (e.g., AWS IoT Core, DynamoDB specific features)
+- Partners/investors are deep AWS shops
+
+**Anti-pattern to avoid:**
+Don't choose multi-cloud at 6 engineers. The operational overhead of managing two
+cloud environments exceeds the flexibility benefit. Make a choice, own it.
+
+</details>
+
+---
+
+## 💸 Detailed Cost Comparison (Running 1 Web Service 24/7)
+
+| Resource | AWS | GCP | Azure |
+|----------|-----|-----|-------|
+| 1 vCPU / 2GB RAM VM | t3.small: $0.023/h ($17/mo) | e2-small: $0.017/h ($12/mo) | B1s: $0.012/h ($9/mo) |
+| Managed PostgreSQL | RDS db.t3.micro: $27/mo | Cloud SQL: $25/mo | Azure DB Flex: $23/mo |
+| 100 GB Object Storage | S3: $2.30/mo | GCS: $2.00/mo | Blob: $1.90/mo |
+| 1TB Data Egress | $90/mo | $85/mo | $87/mo |
+| Container Orchestration | EKS: $73/mo (control plane) | GKE: $74/mo | AKS: $0/mo (free) |
+| Serverless (1M calls) | Lambda: $0.20 | Cloud Functions: $0.40 | Azure Functions: $0.20 |
+
+**Key insight:** At small scale, differences are minor. At large scale (100+ VMs), AWS bulk discounts and Reserved Instance pricing can be 40-60% cheaper. GCP Sustained Use Discounts are automatic (no commitment required).
+
+---
+
 ## 🔗 What to Read Next
 
 1. **[Cloud/AWS/Core_Services.md](./AWS/Core_Services.md)** — AWS deep dive

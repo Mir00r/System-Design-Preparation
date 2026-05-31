@@ -773,3 +773,7 @@ DP: [#70, #322, #518]
 ---
 
 *Pro Tip: Bookmark this page and review it every Sunday to stay on track!* 📌
+
+---
+
+*Previous: [← Algorithms README](./README.md) | Next: [Sorting Fundamentals →](./Sorting/01_Sorting_Fundamentals.md)*

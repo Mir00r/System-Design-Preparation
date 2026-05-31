@@ -681,3 +681,7 @@ public int maxProduct(int[] nums) {
 
 *Remember: "Master the patterns, master the interviews!"* 💎✨
 
+---
+
+*Previous: [← DP Fundamentals](./01_DP_Fundamentals.md) | Next: [Greedy Fundamentals →](../Greedy/01_Greedy_Fundamentals.md)*
+

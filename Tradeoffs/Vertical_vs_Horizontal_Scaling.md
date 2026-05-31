@@ -406,3 +406,7 @@ For each scenario, choose vertical or horizontal (or hybrid) and explain:
 ---
 
 *"Scale vertically until it hurts. Then scale horizontally where it matters." — Pragmatic Architecture 101* 📏
+
+---
+
+*Previous: [← Top 15 Tradeoffs](./Top_15_Tradeoffs.md) | Next: [Synchronous vs Asynchronous →](./Synchronous_vs_Asynchronous.md)*

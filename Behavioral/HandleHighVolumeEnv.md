@@ -176,3 +176,7 @@ This **Incident Checklist** has been **vital** in ensuring that I can handle hig
 ---
 
 Would you like me to **create a quick flow diagram** of this checklist for visualizing it in action during meetings? Just say **"show flow diagram"**! 🚀📊
+
+---
+
+*Previous: [← Prioritise Your Work](./PrioritiseYourWork.md) | Next: [Last Minute Changes →](./LastMinuteChanges.md)*

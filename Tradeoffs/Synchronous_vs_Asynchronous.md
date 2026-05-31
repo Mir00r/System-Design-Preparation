@@ -443,3 +443,7 @@ User → Checkout API (sync: validate → reserve → pay) → 200 "Order Confir
 ---
 
 *"If your microservices communicate synchronously, you don't have microservices — you have a distributed monolith with extra network latency." — Microservices Proverb* ⚡
+
+---
+
+*Previous: [← Vertical vs Horizontal Scaling](./Vertical_vs_Horizontal_Scaling.md) | Next: [Strong vs Eventual Consistency →](./Strong_vs_Eventual_Consistency.md)*

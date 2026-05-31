@@ -332,3 +332,7 @@ AMDAHL'S LAW:
 ---
 
 *"Concurrency is not parallelism, but it enables parallelism. Parallelism without concurrency is just SIMD." — Adapted from Rob Pike* 🧵
+
+---
+
+*Previous: [← Push vs Pull Architecture](./Push_vs_Pull_Architecture.md) | Next: [REST vs RPC →](./REST_vs_RPC.md)*
