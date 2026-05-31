@@ -36,13 +36,32 @@ Intercom builds a customer service platform. Their coding rounds heavily focus o
 
 ---
 
+## � Interview Preparation Guides
+
+| # | Guide | Covers |
+|---|-------|--------|
+| 00 | [Complete Interview Prep Guide](./00_InterviewPrepGuide.md) | Master overview: all rounds, patterns, 90-day plan |
+| 13 | [Minicom Round Prep](./13_MinicomRoundPrep.md) | Full-stack coding: React + Node + Rails patterns, time management |
+| 14 | [Values/Behavioral Deep Dive](./14_ValuesRound_BehavioralPrep.md) | 15 pre-written stories, SBI framework, red flags |
+| 15 | [System Design & Data Modelling](./15_SystemDesign_DataModelling.md) | Schema design, extensions, scaling, architecture |
+| 16 | [Additional Coding Problems](./16_AdditionalCodingProblems.md) | 8 backup problems (Group Anagrams, Min Stack, Top K, etc.) |
+| 17 | [Interview Day Cheat Sheet](./17_InterviewDay_CheatSheet.md) | One-page quick reference for each round |
+| 18 | [Company Knowledge 2026](./18_CompanyKnowledge_2026.md) | Tech stack, scale numbers, culture, what to reference |
+
+---
+
 ## 💡 Interview Tips (Intercom Specific)
 
 - Intercom expects strong **OOP fundamentals** — think in terms of classes with clear responsibilities
 - Be ready to discuss **Low Level Design** for chat systems (tables, relationships, indexes)
-- The load balancer problem is the **most recurring** — know it inside out
+- The load balancer problem is the **most recurring** — know it inside out (P01)
 - They value **clean, readable code** over clever one-liners
 - Always discuss the **tie-breaking logic** explicitly — interviewers probe this
+- **Code is NOT compiled/run** — readability > syntax correctness
+- **Spend 5-10 min discussing approach BEFORE coding**
+- **The coding question may be revealed in the prep email** — read it carefully!
+- Their tech stack: **Rails monolith, MySQL/Vitess, Elasticsearch, Redis, AWS**
+- Philosophy: "Boring technology", "Ship in small steps", "Run less software"
 
 ---
 
@@ -52,3 +71,6 @@ Intercom builds a customer service platform. Their coding rounds heavily focus o
 - [HashMap / HashTable](../../DataStructures/HashTables/)
 - [Load Balancing](../../BuildingBlocks/LoadBalancing.md)
 - [System Design — Chat System](../../SystemDesignCaseStudies/)
+- [Caching Strategies](../../BuildingBlocks/CachingStrategies.md)
+- [Message Queues](../../BuildingBlocks/MessageQueues.md)
+- [Database Sharding](../../Database/Sharding.md)
