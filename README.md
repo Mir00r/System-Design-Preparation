@@ -40,6 +40,23 @@ Comprehensive algorithm tutorial series with 177+ practice problems:
 
 👉 **[Start Your Algorithm Journey →](./Algorithms/README.md)**
 
+### 🧠 Engineering Behavioral Interview Mastery (NEW! 🚀)
+Complete gamified tutorial series for mastering behavioral interviews:
+- **Foundations**: What behavioral interviews are & psychology behind them
+- **STAR Method Mastery**: Framework deep dive with advanced variations
+- **Leadership & Influence**: Leading without authority, 5 types of IC leadership
+- **Conflict Resolution**: DESC framework, 5 conflict styles, bridge-building
+- **Communication**: Technical translation, cross-functional collaboration
+- **Problem-Solving & Decision Making**: Trade-off analysis, handling ambiguity
+- **Growth Mindset**: Failure stories, adaptability, continuous learning
+- **Time Management**: Prioritization frameworks (Eisenhower, RICE, MoSCoW)
+- **Ownership & Accountability**: End-to-end ownership, initiative-taking
+- **Big Tech Specific**: Amazon LPs, Google Googleyness, Meta, Microsoft, Netflix
+- **50+ Practice Questions**: Mock interviews, role-play scenarios, rubrics
+- **Cheat Sheet**: One-page quick reference for interview day
+
+👉 **[Start Your Behavioral Interview Journey →](./EngineeringBehavioral/README.md)**
+
 ### Core System Design Concepts
 - **Building Blocks**
   - Caching strategies and implementations
