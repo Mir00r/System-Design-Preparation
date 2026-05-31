@@ -29,7 +29,7 @@ Based on 52+ candidate reports (2022–2026), Intercom's Product Engineer interv
 
 ```
 ┌─────────────────────────────────────────────────────────┐
-│  Round 1: Recruiter Call (30 min)                        │
+│  Round 1: Recruiter Call (30 min)                       │
 │  ↓                                                      │
 │  Round 2: Problem Solving / Coding (50 min)             │
 │  + Values Assessment (45 min)  [SAME DAY]               │
