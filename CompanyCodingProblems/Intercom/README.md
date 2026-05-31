@@ -18,6 +18,12 @@ Intercom builds a customer service platform. Their coding rounds heavily focus o
 | 04 | [User Ping Tracker API](./04_UserPingTracker.md) | 🟡 Medium | HashMap, Partitioned Array, Class Design, Math | Intercom Coding Round (recurring) |
 | 05 | [Transaction Histogram](./05_TransactionHistogram.md) | 🟡 Medium | HashMap, Time Bucketing, Data Aggregation | Intercom Coding Round (recurring) |
 | 06 | [Chat System Low Level Design (DB Schema)](./06_ChatSystemLowLevelDesign.md) | 🔴 Hard | RDBMS, Schema Design, Indexing, Normalization | Intercom System Design Round (recurring) |
+| 07 | [Task Scheduler](./07_TaskScheduler.md) | 🟡 Medium | Priority Queue, Greedy, HashMap, Cooldown | LeetCode 621 / Expected (PQ-based) |
+| 08 | [Sliding Window Rate Limiter](./08_RateLimiter.md) | 🟡 Medium | Sliding Window, HashMap, Queue, Class Design | Expected (API Rate Limiting) |
+| 09 | [LRU Cache](./09_LRUCache.md) | 🟡 Medium | HashMap, Doubly Linked List, Class Design | LeetCode 146 / Expected (Dual DS) |
+| 10 | [Meeting Rooms II](./10_MeetingRoomsII.md) | 🟡 Medium | Sorting, Priority Queue, Intervals, Greedy | LeetCode 253 / Expected (Scheduling) |
+| 11 | [Design Leaderboard](./11_DesignLeaderboard.md) | 🟡 Medium | HashMap, TreeMap, Sorting, Top-K | LeetCode 1244 / Expected (Ranking) |
+| 12 | [Skill-Based Routing](./12_SkillBasedRouting.md) | 🟡 Medium | HashMap, Priority Queue, Multi-criteria | Expected (Extension of P01) |
 
 ---
 
