@@ -47,6 +47,7 @@ Intercom builds a customer service platform. Their coding rounds heavily focus o
 | 16 | [Additional Coding Problems](./16_AdditionalCodingProblems.md) | 8 backup problems (Group Anagrams, Min Stack, Top K, etc.) |
 | 17 | [Interview Day Cheat Sheet](./17_InterviewDay_CheatSheet.md) | One-page quick reference for each round |
 | 18 | [Company Knowledge 2026](./18_CompanyKnowledge_2026.md) | Tech stack, scale numbers, culture, what to reference |
+| 19 | [HR Round Prep — Abdur Razzak](./19_HR_Round_Prep_AbdurRazzak.md) | **Personalized** — word-for-word intro script, all HR Q&A, salary strategy |
 
 ---
 
